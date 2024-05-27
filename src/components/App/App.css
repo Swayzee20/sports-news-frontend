@@ -1,0 +1,19 @@
+.App {
+  max-width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+      180deg,
+      rgba(217, 217, 217, 0) 0%,
+      rgba(255, 255, 255, 0) 43.23%,
+      rgba(0, 0, 0, 0.61) 100%
+    ),
+    url("../../Images/mainBackground.png");
+  margin: auto;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}

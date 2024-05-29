@@ -1,0 +1,37 @@
+/* .register__modal {
+  display: flex;
+  flex-direction: column;
+}
+
+.register__modal_input {
+  border: none;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 100%);
+  line-height: 20px;
+  font-size: 16px;
+}
+
+.register__modal-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.register__modal_input-title {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.register__modal_login {
+  position: absolute;
+  bottom: 43px;
+  left: 160px;
+  border: none;
+  background: none;
+  font-size: 16px;
+  line-height: 20px;
+  opacity: 50%;
+} */

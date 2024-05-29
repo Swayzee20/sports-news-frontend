@@ -4,9 +4,11 @@ import mainBackgroundPath from "../../Images/mainBackground.png";
 
 function Main() {
   return (
-    <div className="main">
-      <div className="main__title">Keep up with the world of soccer</div>
-      <div className="main__subtitle">Find your favorite team</div>
+    <main className="main">
+      <div className="main__title">
+        See what's going on in the world of Football
+      </div>
+      <div className="main__subtitle">Keep up with your favorite team</div>
       <input
         type="text"
         name="seart"
@@ -17,7 +19,7 @@ function Main() {
         // value={name}
         // onChange={handleNameChange}
       />
-    </div>
+    </main>
   );
 }
 

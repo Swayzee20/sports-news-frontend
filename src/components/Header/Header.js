@@ -6,7 +6,17 @@ function Header() {
     <div className="header">
       <div className="header__elements">
         <h1 className="header__title"> Sports News</h1>
-        <div className="header__nav">Home</div>
+        <div className="header__nav">
+          <button className="header__home-button" type="click">
+            Home
+          </button>
+          <button className="header__profile-button" type="click">
+            Profile
+          </button>
+          <button className="header__signup" type="click">
+            Sign up
+          </button>
+        </div>
       </div>
     </div>
   );

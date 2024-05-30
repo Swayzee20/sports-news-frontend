@@ -3,6 +3,7 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import RegisterModal from "../RegisterModal/RegisterModal";
+import LoginModal from "../LoginModal/LoginModal";
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       <Header />
       <Main />
       <Footer />
-      <RegisterModal />
+      <LoginModal />
+      {/* <RegisterModal /> */}
     </div>
   );
 }

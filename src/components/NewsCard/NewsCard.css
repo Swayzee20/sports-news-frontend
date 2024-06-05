@@ -1,0 +1,42 @@
+.newscard {
+  width: 400px;
+  height: 550px;
+  border: 1px solid black;
+  background-color: rgba(222, 222, 222, 1);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  color: black;
+  box-shadow: 12px 10px 10px rgba(0, 0, 0, 0.7);
+}
+
+.newscard__info {
+  padding: 10px;
+}
+
+.newscard__image {
+  width: 400px;
+  height: 275px;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+}
+
+.newscard__date {
+  font-size: 20px;
+  left: 5px;
+  display: flex;
+  color: rgb(155, 155, 155);
+}
+
+.newscard__title {
+  display: flex;
+  font-size: 24px;
+  margin: 5px 0 8px;
+}
+
+.newscard__body {
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0;
+  text-align: left;
+}

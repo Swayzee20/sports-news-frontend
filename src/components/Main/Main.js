@@ -1,6 +1,6 @@
 import React from "react";
 import "./Main.css";
-import mainBackgroundPath from "../../Images/mainBackground.png";
+import mainBackgroundPath from "../../Images/mainBackground.jpg";
 
 function Main() {
   return (

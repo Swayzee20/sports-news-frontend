@@ -8,7 +8,7 @@ function NewsCard() {
     <div className="newscard">
       <img className="newscard__image" src={cardImagePath} />
       <div className="newscard__info">
-        <div className="newscard__date">date</div>
+        <div className="newscard__date">June 1, 2024</div>
         <h2 className="newscard__title">Team goes to SemiFinal</h2>
         <body className="newscard__body">
           To whom it may concern, the basketball team made it to the finals.

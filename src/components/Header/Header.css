@@ -39,3 +39,19 @@
   height: 25px;
   width: 70px;
 }
+
+.header__button-home {
+  color: white;
+}
+
+.header__button-home_active {
+  color: blue;
+}
+
+.header__button-profile {
+  color: white;
+}
+
+.header__button-profile_active {
+  color: blue;
+}

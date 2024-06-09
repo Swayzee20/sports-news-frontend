@@ -4,6 +4,7 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Profile from "../Profile/Profile";
 import Footer from "../Footer/Footer";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
 
@@ -20,9 +21,9 @@ function App() {
         <Route exact path="/">
           <Main />
         </Route>
-        <Route path="/profile">
+        <ProtectedRoute path="/profile" loggedIn={isLoggedIn}>
           <Profile />
-        </Route>
+        </ProtectedRoute>
       </Switch>
       <Footer />
       {/* <LoginModal /> */}

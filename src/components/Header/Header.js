@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 import "./Header.css";
 
-function Header() {
+function Header({ loggedIn }) {
   return (
     <div className="header">
       <div className="header__elements">
@@ -16,16 +16,22 @@ function Header() {
           >
             Home
           </NavLink>
-          <NavLink
-            to="/profile"
-            activeClassName="header__button-profile_active"
-            className="header__button header__button-profile"
-          >
-            Profile
-          </NavLink>
-          <button className="header__button header__button-signup" type="click">
-            Sign up
-          </button>
+          {loggedIn ? (
+            <NavLink
+              to="/profile"
+              activeClassName="header__button-profile_active"
+              className="header__button header__button-profile"
+            >
+              Profile
+            </NavLink>
+          ) : (
+            <button
+              className="header__button header__button-signup"
+              type="click"
+            >
+              Sign up Sign in
+            </button>
+          )}
         </div>
       </div>
     </div>

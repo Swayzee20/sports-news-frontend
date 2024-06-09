@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header loggedIn={isLoggedIn} />
       <Switch>
         <Route exact path="/">
           <Main />

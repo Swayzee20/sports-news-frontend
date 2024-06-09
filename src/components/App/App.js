@@ -10,6 +10,7 @@ import LoginModal from "../LoginModal/LoginModal";
 import "./App.css";
 
 function App() {
+  const history = useHistory();
   const [isLoggedIn, setLoggedIn] = React.useState(false);
 
   return (

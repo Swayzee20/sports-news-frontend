@@ -13,10 +13,22 @@ import "./App.css";
 function App() {
   const history = useHistory();
   const [isLoggedIn, setLoggedIn] = React.useState(false);
+  const [activeModal, setActiveModal] = React.useState("");
+
+  function handleCloseModal() {
+    setActiveModal("");
+  }
+
+  function handleSignUpModal() {
+    setActiveModal("signup");
+  }
+  function handleLoginModal() {
+    setActiveModal("login");
+  }
 
   return (
     <div className="App">
-      <Header loggedIn={isLoggedIn} />
+      <Header loggedIn={isLoggedIn} onClick={handleSignUpModal} />
       <Switch>
         <Route exact path="/">
           <Main />
@@ -26,8 +38,20 @@ function App() {
         </ProtectedRoute>
       </Switch>
       <Footer />
-      {/* <LoginModal /> */}
-      {/* <RegisterModal /> */}
+      {activeModal === "signup" && (
+        <RegisterModal
+          handleCloseModal={handleCloseModal}
+          isOpen={activeModal === "signup"}
+          handleLoginModal={handleLoginModal}
+        />
+      )}
+      {activeModal === "login" && (
+        <LoginModal
+          handleCloseModal={handleCloseModal}
+          isOpen={activeModal === "login"}
+          handleSignUpModal={handleSignUpModal}
+        />
+      )}
     </div>
   );
 }

@@ -2,17 +2,15 @@ import React from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./LoginModal.css";
 
-function LoginModal(
-  {
-    //   handleCloseModal,
-    //   data,
-    //   isOpen,
-    //   handleEmailChange,
-    //   handlePasswordChange,
-    //   signIn,
-    //   handleSignUpModal,
-  }
-) {
+function LoginModal({
+  handleCloseModal,
+  //   data,
+  isOpen,
+  //   handleEmailChange,
+  //   handlePasswordChange,
+  //   signIn,
+  handleSignUpModal,
+}) {
   //   const { email, password } = data;
 
   //   function handleSubmit(e) {
@@ -29,8 +27,8 @@ function LoginModal(
 
   return (
     <ModalWithForm
-      //   onClose={handleCloseModal}
-      //   isOpen={isOpen}
+      onClose={handleCloseModal}
+      isOpen={isOpen}
       //   onSubmit={handleSubmit}
       title="Log In"
       name="login-form"
@@ -63,7 +61,7 @@ function LoginModal(
         <button
           className="login__modal_signup"
           type="button"
-          //   onClick={handleSignUpModal}
+          onClick={handleSignUpModal}
         >
           or Sign Up
         </button>

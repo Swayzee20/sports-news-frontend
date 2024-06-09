@@ -2,20 +2,18 @@ import React from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./RegisterModal.css";
 
-function RegisterModal(
-  {
-    //   handleCloseModal,
-    //   isOpen,
-    //   data,
-    //   register,
-    //   signIn,
-    //   handleEmailChange,
-    //   handlePasswordChange,
-    //   handleNameChange,
-    //   handleUrlChange,
-    //   handleLoginModal,
-  }
-) {
+function RegisterModal({
+  handleCloseModal,
+  isOpen,
+  //   data,
+  //   register,
+  //   signIn,
+  //   handleEmailChange,
+  //   handlePasswordChange,
+  //   handleNameChange,
+  //   handleUrlChange,
+  handleLoginModal,
+}) {
   //   const { name, avatar, email, password } = data;
 
   //   function handleSubmit(e) {
@@ -27,8 +25,8 @@ function RegisterModal(
 
   return (
     <ModalWithForm
-      //   onClose={handleCloseModal}
-      //   isOpen={isOpen}
+      onClose={handleCloseModal}
+      isOpen={isOpen}
       //   onSubmit={handleSubmit}
       title="Sign Up"
       name="register-form"
@@ -83,7 +81,7 @@ function RegisterModal(
           <button
             className="register__modal_login"
             type="button"
-            // onClick={handleLoginModal}
+            onClick={handleLoginModal}
           >
             or Log In
           </button>

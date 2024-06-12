@@ -1,19 +1,39 @@
+@font-face {
+  font-family: "Oswald";
+  font-style: medium;
+  font-weight: 700;
+  src: url("../../vendor/fonts/Oswald-Medium.woff") format("woff");
+  /* font-display: swap; */
+}
+
 .main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 20px;
   max-width: 1360px;
   min-height: 500px;
   margin: 0px auto;
+  padding-bottom: 100px;
   color: white;
   align-items: center;
+  font-family: "Oswald";
+}
+
+.main__title {
+  font-size: 60px;
+  margin: 30px 0 10px;
+}
+
+.main__subtitle {
+  font-size: 40px;
 }
 
 .main__search {
   border: none;
   border-radius: 12px;
-  height: 30px;
-  width: 400px;
+  height: 40px;
+  width: 600px;
   box-sizing: border-box;
   padding: 10px;
   border: 1px solid rgb(70, 70, 70);
@@ -23,15 +43,44 @@
 }
 
 .main__search::placeholder {
-  font-size: 14px;
+  font-size: 20px;
 }
 
-.main__search:hover {
+/* .main__search:hover {
   width: 410px;
   height: 31px;
+} */
+
+/* .main__search:focus {
+  width: 410px;
+  height: 31px;
+} */
+
+@media screen and (max-width: 1023px) and (min-width: 581px) {
+  .main {
+    gap: 10px;
+  }
+  .main__title {
+    font-size: 40px;
+  }
+  .main__subtitle {
+    font-size: 30px;
+  }
+  .main__search {
+    height: 35px;
+    width: 550px;
+  }
 }
 
-.main__search:focus {
-  width: 410px;
-  height: 31px;
+@media screen and (max-width: 580px) {
+  .main__title {
+    font-size: 30px;
+  }
+  .main__subtitle {
+    font-size: 25px;
+  }
+  .main__search {
+    height: 35px;
+    width: 450px;
+  }
 }

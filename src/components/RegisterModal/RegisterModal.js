@@ -23,6 +23,12 @@ function RegisterModal({
   //     register(data);
   //   }
 
+  function hasInvalInput() {
+    return this._inputElements.some((inputElement) => {
+      return !inputElement.validity.valid;
+    });
+  }
+
   return (
     <ModalWithForm
       onClose={handleCloseModal}

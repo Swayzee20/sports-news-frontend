@@ -13,18 +13,19 @@
 .modal__form {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 40px;
 }
 .modal__content {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: rgb(51, 51, 51);
   max-width: 496px;
   width: 100%;
   border-radius: 20px;
   padding: 20px 28px 36px;
   position: relative;
   gap: 24px;
+  text-align: left;
 }
 .modal__content-header {
   display: flex;
@@ -32,30 +33,54 @@
 
 .modal__title {
   margin: 0;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 20px;
 }
 .modal__close {
   background-color: transparent;
-  background-image: url("../../Images/Close.png");
+  background-image: url("../../Images/Close2.png");
   background-repeat: no-repeat;
   width: 20px;
   height: 20px;
   border: none;
   position: absolute;
-  right: 20px;
+  top: -20px;
+  right: -20px;
 }
 .modal__close:hover {
   cursor: pointer;
 }
 .modal__submit {
   background-color: rgba(0, 0, 0, 0.3);
-  color: white;
+  background-color: rgb(241, 241, 241);
+  color: black;
   border: none;
   border-radius: 4px;
   width: 124px;
   height: 36px;
+  cursor: pointer;
 }
 .modal__submit:hover {
-  cursor: pointer;
+  background-color: rgb(205, 205, 205);
+}
+
+@media screen and (max-width: 580px) {
+  .modal__content {
+    max-width: 350px;
+    gap: 20px;
+  }
+  .modal__form {
+    gap: 30px;
+  }
+
+  .modal__title {
+    font-size: 18px;
+  }
+  .modal__content-header {
+    justify-content: center;
+  }
+  .modal__submit {
+    align-self: center;
+    margin-bottom: 25px;
+  }
 }

@@ -30,7 +30,7 @@ function Header({ loggedIn, onClick }) {
               type="click"
               onClick={onClick}
             >
-              Sign up Sign in
+              Sign up
             </button>
           )}
         </div>

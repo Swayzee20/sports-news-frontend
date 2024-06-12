@@ -43,18 +43,18 @@
 }
 
 .main__search::placeholder {
-  font-size: 20px;
+  font-size: 18px;
 }
 
-/* .main__search:hover {
-  width: 410px;
-  height: 31px;
-} */
+.main__search:hover {
+  /* width: 410px;
+  height: 31px; */
+  scale: 1.01;
+}
 
-/* .main__search:focus {
-  width: 410px;
-  height: 31px;
-} */
+.main__search:focus {
+  scale: 1.01;
+}
 
 @media screen and (max-width: 1023px) and (min-width: 581px) {
   .main {
@@ -70,6 +70,9 @@
     height: 35px;
     width: 550px;
   }
+  .main__search::placeholder {
+    font-size: 16px;
+  }
 }
 
 @media screen and (max-width: 580px) {
@@ -82,5 +85,8 @@
   .main__search {
     height: 35px;
     width: 450px;
+  }
+  .main__search::placeholder {
+    font-size: 16px;
   }
 }

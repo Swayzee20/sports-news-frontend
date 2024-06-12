@@ -43,7 +43,6 @@
   color: rgb(237, 237, 237);
   box-sizing: border-box;
   transition: 0.3s;
-  /* box-shadow: 1px 10px 10px white; */
 }
 
 .header__button:hover {

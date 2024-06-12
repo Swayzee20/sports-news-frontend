@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "Oswald";
+  font-style: medium;
+  font-weight: 700;
+  src: url("../../vendor/fonts/Oswald-Medium.woff") format("woff");
+}
+
+.profile {
+  padding: 10px 35px 30px;
+  min-height: 550px;
+  font-family: "Oswald";
+  display: flex;
+}
+
+.profile__content {
+  margin: 0 auto;
+}
+
+.profile__title {
+  font-size: 50px;
+}
+
+.profile__news-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 30px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+@media screen and (max-width: 1199px) and (min-width: 810px) {
+  .profile__news-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 809px) {
+  .profile__news-section {
+    grid-template-columns: 1fr;
+  }
+}

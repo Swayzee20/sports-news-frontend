@@ -1,5 +1,7 @@
 import React from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import FormInput from "../FormInput/FormInput";
+import { useState } from "react";
 import "./RegisterModal.css";
 
 function RegisterModal({
@@ -29,6 +31,42 @@ function RegisterModal({
     });
   }
 
+  const [inputValues, setInputValues] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+
+  const inputs = [
+    {
+      id: 1,
+      name: "username",
+      type: "text",
+      placeholder: "Username",
+      label: "Username",
+    },
+    {
+      id: 2,
+      name: "email",
+      type: "email",
+      placeholder: "Email",
+      label: "Email",
+    },
+    {
+      id: 3,
+      name: "password",
+      type: "password",
+      placeholder: "Password",
+      label: "Password",
+    },
+  ];
+
+  function handleChange(e) {
+    setInputValues({ ...inputValues, [e.target.name]: e.target.value });
+  }
+
+  console.log(inputValues);
+
   return (
     <ModalWithForm
       onClose={handleCloseModal}
@@ -40,6 +78,15 @@ function RegisterModal({
     >
       <div className="register__modal">
         <div className="register__modal-inputs">
+          {inputs.map((input) => (
+            <FormInput
+              key={input.id}
+              {...input}
+              value={inputValues[input.name]}
+              onChange={handleChange}
+            />
+          ))}
+
           <label className="register__modal_input-title">
             <div>Email</div>
             <input

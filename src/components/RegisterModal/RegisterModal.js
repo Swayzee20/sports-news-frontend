@@ -3,6 +3,7 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import FormInput from "../FormInput/FormInput";
 import { useState } from "react";
 import "./RegisterModal.css";
+import { registerInputs } from "../../Utils/Constants";
 
 function RegisterModal({
   handleCloseModal,
@@ -37,29 +38,39 @@ function RegisterModal({
     password: "",
   });
 
-  const inputs = [
-    {
-      id: 1,
-      name: "username",
-      type: "text",
-      placeholder: "Username",
-      label: "Username",
-    },
-    {
-      id: 2,
-      name: "email",
-      type: "email",
-      placeholder: "Email",
-      label: "Email",
-    },
-    {
-      id: 3,
-      name: "password",
-      type: "password",
-      placeholder: "Password",
-      label: "Password",
-    },
-  ];
+  // const inputs = [
+  //   {
+  //     id: 1,
+  //     name: "username",
+  //     type: "text",
+  //     placeholder: "Username",
+  //     minlength: "2",
+  //     maxlength: "30",
+  //     required: true,
+  //     errorMessage: "Username is required and must be 2-30 characters",
+  //     label: "Username",
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "email",
+  //     type: "email",
+  //     placeholder: "Email",
+  //     required: true,
+  //     errorMessage: "Must enter a valid email",
+  //     label: "Email",
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "password",
+  //     type: "password",
+  //     placeholder: "Password",
+  //     minlength: "2",
+  //     maxlength: "30",
+  //     required: true,
+  //     errorMessage: "Password must be between 2 and 30 characters",
+  //     label: "Password",
+  //   },
+  // ];
 
   function handleChange(e) {
     setInputValues({ ...inputValues, [e.target.name]: e.target.value });
@@ -78,7 +89,7 @@ function RegisterModal({
     >
       <div className="register__modal">
         <div className="register__modal-inputs">
-          {inputs.map((input) => (
+          {registerInputs.map((input) => (
             <FormInput
               key={input.id}
               {...input}
@@ -87,7 +98,7 @@ function RegisterModal({
             />
           ))}
 
-          <label className="register__modal_input-title">
+          {/* <label className="register__modal_input-title">
             <div>Email</div>
             <input
               className="register__modal_input"
@@ -97,8 +108,8 @@ function RegisterModal({
               //   value={email}
               //   onChange={handleEmailChange}
             />
-          </label>
-          <label className="register__modal_input-title">
+          </label> */}
+          {/* <label className="register__modal_input-title">
             <div>Password</div>
             <input
               className="register__modal_input"
@@ -108,8 +119,8 @@ function RegisterModal({
               //   value={password}
               //   onChange={handlePasswordChange}
             />
-          </label>
-          <label className="register__modal_input-title">
+          </label> */}
+          {/* <label className="register__modal_input-title">
             <div>Name</div>
             <input
               className="register__modal_input"
@@ -130,7 +141,7 @@ function RegisterModal({
               //   value={avatar}
               //   onChange={handleUrlChange}
             />
-          </label>
+          </label> */}
           <button
             className="register__modal_login"
             type="button"

@@ -1,6 +1,8 @@
-import React from "react";
+import { React, useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import FormInput from "../FormInput/FormInput";
 import "./LoginModal.css";
+import { loginInputs } from "../../Utils/Constants";
 
 function LoginModal({
   handleCloseModal,
@@ -25,6 +27,15 @@ function LoginModal({
   //     };
   //   }
 
+  const [inputValues, setInputValues] = useState({
+    email: "",
+    password: "",
+  });
+
+  function handleChange(e) {
+    setInputValues({ ...inputValues, [e.target.name]: e.target.value });
+  }
+
   return (
     <ModalWithForm
       onClose={handleCloseModal}
@@ -36,7 +47,15 @@ function LoginModal({
     >
       <div className="login__modal">
         <div className="login__modal-inputs">
-          <label className="login__modal_input-title">
+          {loginInputs.map((input) => (
+            <FormInput
+              key={input.id}
+              {...input}
+              value={inputValues[input.name]}
+              onChange={handleChange}
+            />
+          ))}
+          {/* <label className="login__modal_input-title">
             <div>Email</div>
             <input
               className="login__modal_input"
@@ -57,7 +76,7 @@ function LoginModal({
               // value={password}
               // onChange={handlePasswordChange}
             />
-          </label>
+          </label> */}
           <button
             className="login__modal_signup"
             type="button"

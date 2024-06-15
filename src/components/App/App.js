@@ -7,12 +7,13 @@ import Footer from "../Footer/Footer";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
+import { getNewsStories } from "../../Utils/api";
 
 import "./App.css";
 
 function App() {
   const history = useHistory();
-  const [isLoggedIn, setLoggedIn] = React.useState(false);
+  const [isLoggedIn, setLoggedIn] = React.useState(true);
   const [activeModal, setActiveModal] = React.useState("");
 
   function handleCloseModal() {
@@ -25,6 +26,24 @@ function App() {
   function handleLoginModal() {
     setActiveModal("login");
   }
+
+  // React.useEffect(() => {
+  //   getNewsStories()
+  //     .then((data) => {
+  //       let title = "";
+  //       let image = "";
+  //       let link = "";
+  //       data.body.forEach((item) => {
+  //         console.log(item.image);
+  //         title = item.title;
+  //         image = item.image;
+  //         link = item.link;
+  //       });
+  //     })
+  //     .catch((err) => {
+  //       console.error(err);
+  //     });
+  // }, []);
 
   return (
     <div className="App">

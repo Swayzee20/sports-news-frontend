@@ -38,7 +38,6 @@ function Main() {
         <h2 className="main__newssection_title">Recent News</h2>
         <div className="main__newscards">
           {newsStories.map((story) => {
-            console.log(story.image);
             return (
               <NewsCard
                 //needs key//

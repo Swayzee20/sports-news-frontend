@@ -20,4 +20,15 @@ function getNewsStories() {
     });
 }
 
-export { getNewsStories };
+function getTeamSchedule() {
+  return fetch(`${baseUrl}/getNFLTeamSchedule?teamAbv=BUF&season=2023`, {
+    method: "GET",
+    headers: {
+      "x-rapidapi-key": "e4cb791f0dmsh8985bf89d71f877p15bfa2jsnb63f735d68e6",
+      "x-rapidapi-host":
+        "tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com",
+    },
+  }).then(handleServerResponse);
+}
+
+export { getNewsStories, getTeamSchedule };

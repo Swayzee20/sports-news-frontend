@@ -20,6 +20,24 @@
   font-size: 50px;
 }
 
+.profile__teamschedule {
+  display: grid;
+  color: black;
+  grid-template-columns: repeat(3, 300px);
+  grid-template-rows: repeat(6, 50px);
+  grid-auto-flow: column;
+}
+
+.profile__teamschedule_game {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: rgb(235, 235, 235);
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+
 @media screen and (max-width: 1199px) and (min-width: 810px) {
   .profile__news-section {
     grid-template-columns: repeat(2, 1fr);

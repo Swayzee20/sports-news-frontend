@@ -1,7 +1,7 @@
 .newscard {
   width: 300px;
   height: 400px;
-  border: 1px solid black;
+  border: 1px solid rgb(84, 84, 84);
   background-color: rgb(233, 233, 233);
   border-radius: 10px;
   display: flex;

@@ -13,7 +13,6 @@
   max-width: 1360px;
   min-height: 500px;
   margin: 0px auto;
-  padding-bottom: 100px;
   color: white;
   align-items: center;
   font-family: "Oswald";
@@ -21,14 +20,20 @@
 
 .main__title {
   font-size: 60px;
-  margin: 30px 0 10px;
-}
-
-.main__subtitle {
-  font-size: 40px;
+  margin: 100px 0 10px;
 }
 
 .main__search {
+  max-width: 1360px;
+  margin: auto;
+  height: 500px;
+}
+
+.main__search_title {
+  font-size: 40px;
+}
+
+.main__searchbar {
   border-radius: 12px;
   height: 40px;
   width: 600px;
@@ -41,16 +46,38 @@
   justify-content: center;
 }
 
-.main__search::placeholder {
+.main__newssection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 650px;
+  background-color: rgb(24, 24, 24);
+}
+
+.main__searchbar::placeholder {
   font-size: 18px;
 }
 
-.main__search:hover {
+.main__searchbar:hover {
   scale: 1.01;
 }
 
-.main__search:focus {
+.main__searchbar:focus {
   scale: 1.01;
+}
+
+.main__newssection_title {
+  font-size: 45px;
+}
+
+.main__newscards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 40px;
+  grid-auto-rows: minmax(100px, auto);
+  justify-items: center;
+  /* max-width: 1200px; */
 }
 
 @media screen and (max-width: 1023px) and (min-width: 581px) {
@@ -64,11 +91,11 @@
   .main__subtitle {
     font-size: 30px;
   }
-  .main__search {
+  .main__searchbar {
     height: 35px;
     width: 550px;
   }
-  .main__search::placeholder {
+  .main__searchbar::placeholder {
     font-size: 16px;
   }
 }
@@ -80,14 +107,14 @@
   .main__title {
     font-size: 30px;
   }
-  .main__subtitle {
+  .main__search_title {
     font-size: 25px;
   }
-  .main__search {
+  .main__searchbar {
     height: 35px;
     width: 450px;
   }
-  .main__search::placeholder {
+  .main__searchbar::placeholder {
     font-size: 16px;
   }
 }

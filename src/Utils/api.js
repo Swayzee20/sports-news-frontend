@@ -5,7 +5,7 @@ function handleServerResponse(res) {
 }
 
 function getNewsStories() {
-  return fetch(`${baseUrl}/getNFLNews?recentNews=true&maxItems=5`, {
+  return fetch(`${baseUrl}/getNFLNews?recentNews=true&maxItems=3`, {
     method: "GET",
     headers: {
       // "Content-Type": "application/json",

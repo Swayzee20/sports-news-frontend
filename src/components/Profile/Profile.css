@@ -20,13 +20,6 @@
   font-size: 50px;
 }
 
-.profile__news-section {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px 30px;
-  grid-auto-rows: minmax(100px, auto);
-}
-
 @media screen and (max-width: 1199px) and (min-width: 810px) {
   .profile__news-section {
     grid-template-columns: repeat(2, 1fr);

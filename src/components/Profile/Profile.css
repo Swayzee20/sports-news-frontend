@@ -38,6 +38,18 @@
   border-right: 1px solid black;
 }
 
+.profile__teamschedule_game:first-child {
+  border-top-left-radius: 10px;
+}
+
+.profile__teamschedule_game:nth-child(6) {
+  border-bottom-left-radius: 10px;
+}
+
+.profile__teamschedule_game:nth-child(13) {
+  border-top-right-radius: 10px;
+}
+
 @media screen and (max-width: 1199px) and (min-width: 810px) {
   .profile__news-section {
     grid-template-columns: repeat(2, 1fr);

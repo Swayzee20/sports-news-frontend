@@ -31,4 +31,18 @@ function getTeamSchedule() {
   }).then(handleServerResponse);
 }
 
-export { getNewsStories, getTeamSchedule };
+function getTeams() {
+  return fetch(
+    `${baseUrl}/getNFLTeams?rosters=false&schedules=false&topPerformers=true&teamStats=false&teamStatsSeason=2023`,
+    {
+      method: "GET",
+      headers: {
+        "x-rapidapi-key": "e4cb791f0dmsh8985bf89d71f877p15bfa2jsnb63f735d68e6",
+        "x-rapidapi-host":
+          "tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com",
+      },
+    }
+  ).then(handleServerResponse);
+}
+
+export { getNewsStories, getTeamSchedule, getTeams };

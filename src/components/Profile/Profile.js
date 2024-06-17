@@ -1,5 +1,5 @@
 import React from "react";
-import { getTeamSchedule } from "../../Utils/api";
+import { getTeamSchedule, getTeams } from "../../Utils/api";
 import "./Profile.css";
 
 function Profile() {
@@ -16,7 +16,11 @@ function Profile() {
       });
   }, []);
 
-  const gameInfo = "20230812_IND@BUF";
+  getTeams().then((data) => {
+    const myTeam = data.body.filter((team) => team.teamAbv === "DAL");
+    console.log(myTeam);
+  });
+
   // Variables and Functions for extracting game info from api data
   let gameDate = [];
 

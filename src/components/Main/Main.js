@@ -40,8 +40,9 @@ function Main() {
           {newsStories.map((story) => {
             return (
               <NewsCard
-                //needs key//
+                key={newsStories.indexOf(story)}
                 story={story}
+                alt="news story photo"
               />
             );
           })}

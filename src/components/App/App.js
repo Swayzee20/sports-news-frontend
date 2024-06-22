@@ -71,6 +71,13 @@ function App() {
           handleSignUpModal={handleSignUpModal}
         />
       )}
+      {activeModal === "teams" && (
+        <RegisterModal
+          handleCloseModal={handleCloseModal}
+          isOpen={activeModal === "teams"}
+          handleLoginModal={handleLoginModal}
+        />
+      )}
     </div>
   );
 }

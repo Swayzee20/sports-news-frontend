@@ -16,6 +16,8 @@ function Main() {
       });
   }, []);
 
+  console.log(newsStories);
+
   return (
     <main className="main">
       <div className="main__title">

@@ -7,13 +7,14 @@ import Footer from "../Footer/Footer";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
+import TeamSelectModal from "../TeamSelectModal/TeamSelectModal";
 import { getNewsStories } from "../../Utils/api";
 
 import "./App.css";
 
 function App() {
   const history = useHistory();
-  const [isLoggedIn, setLoggedIn] = React.useState(false);
+  const [isLoggedIn, setLoggedIn] = React.useState(true);
   const [activeModal, setActiveModal] = React.useState("");
 
   function handleCloseModal() {
@@ -25,6 +26,9 @@ function App() {
   }
   function handleLoginModal() {
     setActiveModal("login");
+  }
+  function handleTeamModal() {
+    setActiveModal("teams");
   }
 
   // React.useEffect(() => {
@@ -50,7 +54,10 @@ function App() {
       <Header loggedIn={isLoggedIn} onClick={handleSignUpModal} />
       <Switch>
         <Route exact path="/">
-          <Main loggedIn={isLoggedIn} onClick={handleSignUpModal} />
+          <Main
+            loggedIn={isLoggedIn}
+            onClick={{ handleSignUpModal, handleTeamModal }}
+          />
         </Route>
         <ProtectedRoute path="/profile" loggedIn={isLoggedIn}>
           <Profile />
@@ -72,10 +79,9 @@ function App() {
         />
       )}
       {activeModal === "teams" && (
-        <RegisterModal
+        <TeamSelectModal
           handleCloseModal={handleCloseModal}
           isOpen={activeModal === "teams"}
-          handleLoginModal={handleLoginModal}
         />
       )}
     </div>

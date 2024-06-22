@@ -17,8 +17,6 @@ function RegisterModal({
   //   handleUrlChange,
   handleLoginModal,
 }) {
-  //   const { name, avatar, email, password } = data;
-
   //   function handleSubmit(e) {
   //     e.preventDefault();
   //     const { email, password } = data;

@@ -58,4 +58,16 @@ const loginInputs = [
   },
 ];
 
-export { baseUrl, registerInputs, loginInputs };
+const teams = [
+  { value: "ARI", label: "Arizona Cardinal" },
+  { value: "ATL", label: "Atlanta Falcons" },
+  { value: "BAL", label: "Baltimore Ravens" },
+  { value: "BUF", label: "Buffalo Bills" },
+  { value: "CAR", label: "Carolina Panthers" },
+  { value: "CHI", label: "Chicago Bears" },
+  { value: "CIN", label: "Cincinnati Bengals" },
+  { value: "CLE", label: "Clevelend Bronws" },
+  { value: "DAL", label: "Dallas Cowboys" },
+];
+
+export { baseUrl, registerInputs, loginInputs, teams };

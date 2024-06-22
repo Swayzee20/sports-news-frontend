@@ -5,6 +5,7 @@ import "./Main.css";
 import { getNewsStories } from "../../Utils/api";
 
 function Main({ loggedIn, onClick }) {
+  const { handleSignUpModal, handleTeamModal } = onClick;
   const [newsStories, setNewsStories] = React.useState([]);
 
   // React.useEffect(() => {
@@ -27,18 +28,19 @@ function Main({ loggedIn, onClick }) {
       <div className="main__search">
         <h3 className="main__search_title">Keep up with your favorite team</h3>
         {loggedIn ? (
-          <input
-            type="text"
-            name="seart"
-            placeholder="Search"
-            minLength="1"
-            maxLength="30"
-            className="main__searchbar"
-            // value={name}
-            // onChange={handleNameChange}
-          />
+          <button
+            className="main__button"
+            type="click"
+            onClick={handleTeamModal}
+          >
+            Select Team
+          </button>
         ) : (
-          <button className="main__button" type="click" onClick={onClick}>
+          <button
+            className="main__button"
+            type="click"
+            onClick={handleSignUpModal}
+          >
             Sign Up
           </button>
         )}

@@ -22,7 +22,6 @@
 .header__nav {
   display: flex;
   align-items: center;
-  /* gap: 20px; */
   color: white;
   height: 100%;
   transition: 0.5s ease;

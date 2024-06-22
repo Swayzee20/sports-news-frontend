@@ -3,7 +3,7 @@ import NewsCard from "../NewsCard/NewsCard";
 import "./Main.css";
 import { getNewsStories } from "../../Utils/api";
 
-function Main() {
+function Main({ loggedIn, onClick }) {
   const [newsStories, setNewsStories] = React.useState([]);
 
   React.useEffect(() => {
@@ -25,16 +25,22 @@ function Main() {
       </div>
       <div className="main__search">
         <h3 className="main__search_title">Keep up with your favorite team</h3>
-        <input
-          type="text"
-          name="seart"
-          placeholder="Search"
-          minLength="1"
-          maxLength="30"
-          className="main__searchbar"
-          // value={name}
-          // onChange={handleNameChange}
-        />
+        {loggedIn ? (
+          <input
+            type="text"
+            name="seart"
+            placeholder="Search"
+            minLength="1"
+            maxLength="30"
+            className="main__searchbar"
+            // value={name}
+            // onChange={handleNameChange}
+          />
+        ) : (
+          <button className="main__button" type="click" onClick={onClick}>
+            Sign Up
+          </button>
+        )}
       </div>
       <div className="main__newssection">
         <h2 className="main__newssection_title">Recent News</h2>

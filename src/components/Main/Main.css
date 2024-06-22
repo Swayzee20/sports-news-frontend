@@ -66,6 +66,17 @@
   scale: 1.01;
 }
 
+.main__button {
+  font-size: 40px;
+  font-weight: 500;
+  color: white;
+  background: none;
+  border: solid 2px white;
+  border-radius: 4px;
+  cursor: pointer;
+  backdrop-filter: blur(40px);
+}
+
 .main__newssection_title {
   font-size: 45px;
 }

@@ -50,7 +50,7 @@ function App() {
       <Header loggedIn={isLoggedIn} onClick={handleSignUpModal} />
       <Switch>
         <Route exact path="/">
-          <Main />
+          <Main loggedIn={isLoggedIn} onClick={handleSignUpModal} />
         </Route>
         <ProtectedRoute path="/profile" loggedIn={isLoggedIn}>
           <Profile />

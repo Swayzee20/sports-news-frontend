@@ -71,10 +71,15 @@
   font-weight: 500;
   color: white;
   background: none;
-  border: solid 2px white;
+  border: solid 2.5px white;
   border-radius: 4px;
   cursor: pointer;
   backdrop-filter: blur(40px);
+  transition: 0.2s;
+}
+
+.main__button:hover {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .main__newssection_title {

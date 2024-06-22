@@ -60,7 +60,7 @@
 
 .header__button-home_active {
   color: rgb(255, 255, 255);
-  border-bottom: solid 1px white;
+  border-bottom: solid 0.5px white;
 }
 
 .header__button-profile {
@@ -70,7 +70,7 @@
 
 .header__button-profile_active {
   color: rgb(255, 255, 255);
-  border-bottom: solid 1px white;
+  border-bottom: solid 0.5px white;
   /* backdrop-filter: blur(20px);
   box-shadow: 1px 4px 10px 4px rgb(60, 60, 60); */
 }

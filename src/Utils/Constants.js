@@ -59,7 +59,7 @@ const loginInputs = [
 ];
 
 const teams = [
-  { value: "ARI", label: "Arizona Cardinal" },
+  { value: "ARI", label: "Arizona Cardinals" },
   { value: "ATL", label: "Atlanta Falcons" },
   { value: "BAL", label: "Baltimore Ravens" },
   { value: "BUF", label: "Buffalo Bills" },

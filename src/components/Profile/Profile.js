@@ -1,6 +1,7 @@
 import React from "react";
 import { getTeamSchedule, getTeams, getPlayerData } from "../../Utils/api";
 import PlayerCard from "../PlayerCard/PlayerCard";
+import { teams } from "../../Utils/Constants";
 import "./Profile.css";
 
 const initialState = {
@@ -50,24 +51,32 @@ function playersReducer(state, action) {
 //   }
 // }
 
-function Profile() {
+function Profile({ abv }) {
   const [schedule, setSchedule] = React.useState([]);
   const [date, setDate] = React.useState([]);
-  const [myTeam, setMyTeam] = React.useState([]);
   const [topPlayers, dispatch] = React.useReducer(playersReducer, initialState);
   const [passer, setPasser] = React.useState({});
   const [rusher, setRusher] = React.useState({});
   const [receiver, setReceiver] = React.useState({});
   const [topPlayer, setTopPlayer] = React.useState([]);
 
+  console.log(abv);
+
+  const teamName = teams.filter((item) => item.value === abv);
+  console.log(teamName);
+
   // React.useEffect(() => {
-  //   getTeamSchedule()
-  //     .then((data) => {
-  //       setSchedule(data.body.schedule);
-  //     })
-  //     .catch((err) => {
-  //       console.error(err);
-  //     });
+  //   if (team === "") {
+  //     return;
+  //   } else {
+  //     getTeamSchedule(team)
+  //       .then((data) => {
+  //         setSchedule(data.body.schedule);
+  //       })
+  //       .catch((err) => {
+  //         console.error(err);
+  //       });
+  //   }
   // }, []);
 
   //take the other api calls out of this use effect, maybe assign the variables that you need, to another variable outside of the useeffect,
@@ -76,8 +85,7 @@ function Profile() {
   // React.useEffect(() => {
   //   getTeams()
   //     .then((data) => {
-  //       setMyTeam(data);
-  //       return data;
+  //       return data.body.filter((item) => item.teamAbv === team);
   //     })
   //     .then((data) => {
   //       console.log(data);
@@ -147,40 +155,56 @@ function Profile() {
     <main className="profile">
       <div className="profile__content">
         <h2 className="profile__title">My Team</h2>
-        <div className="profile__teamschedule">
-          {schedule.map((game) => {
-            return game.seasonType === "Regular Season" ? (
-              <div
-                key={schedule.indexOf(game)}
-                className="profile__teamschedule_game"
-              >
-                <p>Wk: {schedule.indexOf(game) - 2}</p>
-                <div>
-                  {handleGameDate(game.gameID)} {handleGameTeams(game.gameID)}
-                </div>
-              </div>
-            ) : (
-              console.log("")
-            );
-          })}
-        </div>
-        <div className="profile__players">
-          <h2>Top Performers</h2>
-          <div className="profile__players_cards">
-            {topPlayers.players.map((player) => {
-              return (
-                <PlayerCard
-                  key={topPlayers.players.indexOf(player)}
-                  yards={topPlayer.find(
-                    (element, index) =>
-                      index === topPlayers.players.indexOf(player)
-                  )}
-                  topPlayer={topPlayer}
-                  player={player}
-                />
-              );
-            })}
+        {/* <div className="profile__teamschedule"> */}
+        {abv === "" ? (
+          <div className="profile__subtitle">Select A Team to Follow</div>
+        ) : (
+          <div className="profile__schedule_info">
+            <div className="profile__teamname">{teamName[0].label}</div>
+            <div className="profile__teamschedule">
+              {schedule.map((game) => {
+                return game.seasonType === "Regular Season" ? (
+                  <div
+                    key={schedule.indexOf(game)}
+                    className="profile__teamschedule_game"
+                  >
+                    <p>Wk: {schedule.indexOf(game) - 2}</p>
+                    <div>
+                      {handleGameDate(game.gameID)}{" "}
+                      {handleGameTeams(game.gameID)}
+                    </div>
+                  </div>
+                ) : (
+                  console.log("")
+                );
+              })}
+            </div>
           </div>
+        )}
+        {/* </div> */}
+        <div className="profile__players">
+          {/* <h2>Top Performers</h2> */}
+
+          {abv === "" ? (
+            <div />
+          ) : (
+            <div className="profile__players_cards">
+              <h2 className="profile__players_title">Top Performers</h2>
+              {topPlayers.players.map((player) => {
+                return (
+                  <PlayerCard
+                    key={topPlayers.players.indexOf(player)}
+                    yards={topPlayer.find(
+                      (element, index) =>
+                        index === topPlayers.players.indexOf(player)
+                    )}
+                    topPlayer={topPlayer}
+                    player={player}
+                  />
+                );
+              })}
+            </div>
+          )}
         </div>
       </div>
     </main>

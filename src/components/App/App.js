@@ -16,6 +16,8 @@ function App() {
   const history = useHistory();
   const [isLoggedIn, setLoggedIn] = React.useState(true);
   const [activeModal, setActiveModal] = React.useState("");
+  const [teamAbv, setTeamAbv] = React.useState("");
+  const [myTeam, setMyTeam] = React.useState("");
 
   function handleCloseModal() {
     setActiveModal("");
@@ -29,6 +31,16 @@ function App() {
   }
   function handleTeamModal() {
     setActiveModal("teams");
+  }
+
+  function handleSetTeam(e) {
+    setTeamAbv(e.target.value);
+    console.log(teamAbv);
+  }
+
+  function handleTeamSubmit() {
+    console.log("ran");
+    setMyTeam(teamAbv);
   }
 
   // React.useEffect(() => {
@@ -60,7 +72,7 @@ function App() {
           />
         </Route>
         <ProtectedRoute path="/profile" loggedIn={isLoggedIn}>
-          <Profile />
+          <Profile abv={myTeam} />
         </ProtectedRoute>
       </Switch>
       <Footer />
@@ -82,6 +94,9 @@ function App() {
         <TeamSelectModal
           handleCloseModal={handleCloseModal}
           isOpen={activeModal === "teams"}
+          handleSetTeam={handleSetTeam}
+          data={teamAbv}
+          handleTeamSubmit={handleTeamSubmit}
         />
       )}
     </div>

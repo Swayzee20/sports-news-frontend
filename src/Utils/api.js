@@ -20,8 +20,8 @@ function getNewsStories() {
     });
 }
 
-function getTeamSchedule() {
-  return fetch(`${baseUrl}/getNFLTeamSchedule?teamAbv=BUF&season=2023`, {
+function getTeamSchedule(team) {
+  return fetch(`${baseUrl}/getNFLTeamSchedule?teamAbv=${team}&season=2023`, {
     method: "GET",
     headers: {
       "x-rapidapi-key": "e4cb791f0dmsh8985bf89d71f877p15bfa2jsnb63f735d68e6",
@@ -42,11 +42,7 @@ function getTeams() {
           "tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com",
       },
     }
-  )
-    .then(handleServerResponse)
-    .then((data) => {
-      return data.body.filter((team) => team.teamAbv === "DAL");
-    });
+  ).then(handleServerResponse);
 }
 
 function getPlayerData(playerID) {

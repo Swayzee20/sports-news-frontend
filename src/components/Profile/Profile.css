@@ -18,9 +18,28 @@
 
 .profile__title {
   font-size: 50px;
+  margin: 41px 0 60px;
+}
+
+.profile__schedule_info {
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+}
+
+.profile__subtitle {
+  color: white;
+  font-size: 30px;
+}
+
+.profile__teamname {
+  color: white;
+  font-size: 30px;
+  margin: 0 0 10px;
 }
 
 .profile__teamschedule {
+  position: relative;
   display: grid;
   color: black;
   grid-template-columns: repeat(3, 300px);
@@ -56,12 +75,21 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+  align-items: center;
+}
+
+.profile__players_title {
+  position: absolute;
+  top: 20px;
 }
 
 .profile__players_cards {
+  position: relative;
   display: flex;
   justify-content: center;
   gap: 40px;
+  height: 300px;
+  align-items: center;
 }
 
 @media screen and (max-width: 1199px) and (min-width: 810px) {

@@ -26,7 +26,13 @@ function Main({ loggedIn, onClick }) {
         See what's going on in the world of Football
       </div>
       <div className="main__search">
-        <h3 className="main__search_title">Keep up with your favorite team</h3>
+        {loggedIn ? (
+          <h3 className="main__search_title">Choose your team to follow</h3>
+        ) : (
+          <h3 className="main__search_title">
+            Keep up with your favorite team
+          </h3>
+        )}
         {loggedIn ? (
           <button
             className="main__button"

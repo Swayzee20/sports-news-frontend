@@ -11,8 +11,6 @@ const initialState = {
 function playersReducer(state, action) {
   switch (action.type) {
     case "update passer":
-      console.log(state);
-      console.log(action.payload);
       return {
         ...state,
         players: [
@@ -60,77 +58,71 @@ function Profile({ abv }) {
   const [receiver, setReceiver] = React.useState({});
   const [topPlayer, setTopPlayer] = React.useState([]);
 
-  console.log(abv);
-
   const teamName = teams.filter((item) => item.value === abv);
-  console.log(teamName);
 
-  // React.useEffect(() => {
-  //   if (team === "") {
-  //     return;
-  //   } else {
-  //     getTeamSchedule(team)
-  //       .then((data) => {
-  //         setSchedule(data.body.schedule);
-  //       })
-  //       .catch((err) => {
-  //         console.error(err);
-  //       });
-  //   }
-  // }, []);
+  React.useEffect(() => {
+    if (abv === "") {
+      return;
+    } else {
+      getTeamSchedule(abv)
+        .then((data) => {
+          setSchedule(data.body.schedule);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
+  }, []);
 
   //take the other api calls out of this use effect, maybe assign the variables that you need, to another variable outside of the useeffect,
   //so that you can use the data in the other API calls.
 
-  // React.useEffect(() => {
-  //   getTeams()
-  //     .then((data) => {
-  //       return data.body.filter((item) => item.teamAbv === team);
-  //     })
-  //     .then((data) => {
-  //       console.log(data);
-  //       setTopPlayer([
-  //         data[0].topPerformers.Passing.passYds,
-  //         data[0].topPerformers.Rushing.rushYds,
-  //         data[0].topPerformers.Receiving.recYds,
-  //       ]);
-  //       getPlayerData(data[0].topPerformers.Passing.passYds.playerID)
-  //         .then((playerData) => {
-  //           setPasser(playerData.body);
-  //           dispatch({
-  //             type: "update passer",
-  //             payload: playerData.body,
-  //           });
-  //         })
-  //         .catch((err) => console.error(err));
-  //       getPlayerData(data[0].topPerformers.Rushing.rushYds.playerID)
-  //         .then((playerData) => {
-  //           console.log(playerData.body);
-  //           setRusher(playerData.body);
-  //           dispatch({
-  //             type: "update rusher",
-  //             payload: playerData.body,
-  //           });
-  //         })
-  //         .catch((err) => console.error(err));
-  //       getPlayerData(data[0].topPerformers.Receiving.recYds.playerID)
-  //         .then((playerData) => {
-  //           setReceiver(playerData.body);
-  //           dispatch({
-  //             type: "update receiver",
-  //             payload: playerData.body,
-  //           });
-  //         })
-  //         .catch((err) => console.error(err));
-  //       dispatch({
-  //         type: "update passYds",
-  //         payload: "5000",
-  //       });
-  //     })
-  //     .catch((err) => {
-  //       console.error(err);
-  //     });
-  // }, []);
+  React.useEffect(() => {
+    getTeams()
+      .then((data) => {
+        return data.body.filter((item) => item.teamAbv === abv);
+      })
+      .then((data) => {
+        console.log(data);
+        setTopPlayer([
+          data[0].topPerformers.Passing.passYds,
+          data[0].topPerformers.Rushing.rushYds,
+          data[0].topPerformers.Receiving.recYds,
+        ]);
+        getPlayerData(data[0].topPerformers.Passing.passYds.playerID)
+          .then((playerData) => {
+            setPasser(playerData.body);
+            dispatch({
+              type: "update passer",
+              payload: playerData.body,
+            });
+          })
+          .catch((err) => console.error(err));
+        getPlayerData(data[0].topPerformers.Rushing.rushYds.playerID)
+          .then((playerData) => {
+            console.log("ranRB");
+            setRusher(playerData.body);
+            dispatch({
+              type: "update rusher",
+              payload: playerData.body,
+            });
+          })
+          .catch((err) => console.error(err));
+        getPlayerData(data[0].topPerformers.Receiving.recYds.playerID)
+          .then((playerData) => {
+            console.log(playerData);
+            setReceiver(playerData.body);
+            dispatch({
+              type: "update receiver",
+              payload: playerData.body,
+            });
+          })
+          .catch((err) => console.error(err));
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
 
   // Variables and Functions for extracting game info from api data
   let gameDate = [];
@@ -194,10 +186,10 @@ function Profile({ abv }) {
                 return (
                   <PlayerCard
                     key={topPlayers.players.indexOf(player)}
-                    yards={topPlayer.find(
-                      (element, index) =>
-                        index === topPlayers.players.indexOf(player)
-                    )}
+                    // yards={topPlayer.find(
+                    //   (element, index) =>
+                    //     index === topPlayers.players.indexOf(player)
+                    // )}
                     topPlayer={topPlayer}
                     player={player}
                   />

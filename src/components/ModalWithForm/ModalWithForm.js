@@ -9,6 +9,7 @@ function ModalWithForm({
   onClose,
   isOpen,
   onSubmit,
+  isLoggedIn,
 }) {
   return (
     <div className={`modal modal_type_${name}`}>
@@ -21,7 +22,10 @@ function ModalWithForm({
           ></button>
           <h3 className="modal__title">{title}</h3>
         </div>
-        <form className="modal__form" onSubmit={onSubmit}>
+        <form
+          className={isLoggedIn ? "modal__form_team" : "modal__form_auth"}
+          onSubmit={onSubmit}
+        >
           {children}
           <button className="modal__submit" type="submit">
             {buttonText}

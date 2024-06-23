@@ -10,7 +10,13 @@
   background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(3px);
 }
-.modal__form {
+.modal__form_team {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+.modal__form_auth {
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -60,6 +66,7 @@
   height: 36px;
   cursor: pointer;
 }
+
 .modal__submit:hover {
   background-color: rgb(205, 205, 205);
 }
@@ -79,7 +86,7 @@
   .modal__content-header {
     justify-content: center;
   }
-  .modal__submit {
+  .modal__submit_auth {
     align-self: center;
     margin-bottom: 25px;
   }

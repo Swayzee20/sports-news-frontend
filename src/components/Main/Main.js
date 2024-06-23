@@ -8,15 +8,15 @@ function Main({ loggedIn, onClick }) {
   const { handleSignUpModal, handleTeamModal } = onClick;
   const [newsStories, setNewsStories] = React.useState([]);
 
-  // React.useEffect(() => {
-  //   getNewsStories()
-  //     .then((data) => {
-  //       setNewsStories(data);
-  //     })
-  //     .catch((err) => {
-  //       console.error(err);
-  //     });
-  // }, []);
+  React.useEffect(() => {
+    getNewsStories()
+      .then((data) => {
+        setNewsStories(data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
 
   console.log(newsStories);
 

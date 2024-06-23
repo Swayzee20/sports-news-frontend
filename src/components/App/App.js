@@ -81,6 +81,7 @@ function App() {
           handleCloseModal={handleCloseModal}
           isOpen={activeModal === "signup"}
           handleLoginModal={handleLoginModal}
+          isLoggedIn={isLoggedIn}
         />
       )}
       {activeModal === "login" && (
@@ -88,6 +89,7 @@ function App() {
           handleCloseModal={handleCloseModal}
           isOpen={activeModal === "login"}
           handleSignUpModal={handleSignUpModal}
+          isLoggedIn={isLoggedIn}
         />
       )}
       {activeModal === "teams" && (
@@ -97,6 +99,7 @@ function App() {
           handleSetTeam={handleSetTeam}
           data={teamAbv}
           handleTeamSubmit={handleTeamSubmit}
+          isLoggedIn={isLoggedIn}
         />
       )}
     </div>

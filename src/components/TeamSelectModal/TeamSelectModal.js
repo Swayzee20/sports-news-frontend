@@ -10,6 +10,7 @@ function TeamSelectModal({
   handleSetTeam,
   data,
   handleTeamSubmit,
+  isLoggedIn,
 }) {
   function handleSubmit(e) {
     e.preventDefault();
@@ -27,6 +28,7 @@ function TeamSelectModal({
       name="teamSelect-form"
       buttonText="Select Team"
       onChange={handleSetTeam}
+      isLoggedIn={isLoggedIn}
     >
       <Dropdown props={teams} onChange={handleSetTeam} data={data}></Dropdown>
     </ModalWithForm>

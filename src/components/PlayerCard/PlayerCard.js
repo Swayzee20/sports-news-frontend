@@ -3,16 +3,6 @@ import "./PlayerCard.css";
 import { getPlayerData } from "../../Utils/api";
 
 function PlayerCard({ topPlayer, player, yards }) {
-  console.log(yards);
-  // const [playerInfo, setPlayerInfo] = React.useState({});
-  // let newPlayer = player;
-  // React.useEffect(() => {
-  //   getPlayerData(player.playerID).then((data) => {
-  //     newPlayer.name = data.body.espnName;
-  //     newPlayer.image = data.body.espnHeadshot;
-  //     console.log(newPlayer);
-  //   });
-  // }, []);
   return (
     <div className="playercard">
       <img

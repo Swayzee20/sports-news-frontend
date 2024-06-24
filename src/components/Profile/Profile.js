@@ -175,8 +175,6 @@ function Profile({ abv }) {
         )}
         {/* </div> */}
         <div className="profile__players">
-          {/* <h2>Top Performers</h2> */}
-
           {abv === "" ? (
             <div />
           ) : (

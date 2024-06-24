@@ -34,3 +34,27 @@
   gap: 20px;
   font-size: 14px;
 }
+
+@media screen and (max-width: 989px) and (min-width: 685px) {
+  .playercard {
+    width: 180px;
+    height: 80px;
+  }
+  .playercard__image {
+    width: 95px;
+    height: 80px;
+  }
+  .playercard__title {
+    font-size: 12px;
+  }
+  .playercard__info {
+    padding: 15px 10px;
+  }
+  .playercard__stat {
+    font-size: 10px;
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 684px) {
+}

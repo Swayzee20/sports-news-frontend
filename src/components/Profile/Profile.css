@@ -24,7 +24,8 @@
 .profile__schedule_info {
   display: flex;
   flex-direction: column;
-  height: 350px;
+  min-height: 350px;
+  align-items: center;
 }
 
 .profile__subtitle {
@@ -57,7 +58,7 @@
   border-right: 1px solid black;
 }
 
-.profile__teamschedule_game:first-child {
+/* .profile__teamschedule_game:first-child {
   border-top-left-radius: 10px;
 }
 
@@ -67,20 +68,22 @@
 
 .profile__teamschedule_game:nth-child(13) {
   border-top-right-radius: 10px;
-}
+} */
 
 .profile__players {
-  height: 300px;
+  min-height: 300px;
   padding: 40px 0;
   display: flex;
   flex-direction: column;
   gap: 40px;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .profile__players_title {
   position: absolute;
   top: 20px;
+  margin: 0;
 }
 
 .profile__players_cards {
@@ -88,18 +91,36 @@
   display: flex;
   justify-content: center;
   gap: 40px;
-  height: 300px;
+  min-height: 300px;
   align-items: center;
 }
 
-@media screen and (max-width: 1199px) and (min-width: 810px) {
+@media screen and (max-width: 1199px) and (min-width: 990px) {
   .profile__news-section {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media screen and (max-width: 809px) {
-  .profile__news-section {
-    grid-template-columns: 1fr;
+@media screen and (max-width: 989px) and (min-width: 685px) {
+  .profile__teamschedule {
+    grid-template-columns: repeat(2, 300px);
+    grid-template-rows: repeat(9, 50px);
+  }
+  .profile__players_cards {
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 684px) {
+  .profile__teamschedule {
+    grid-template-columns: 300px;
+    grid-template-rows: repeat(17, 50px);
+  }
+  .profile__players_title {
+    position: static;
+  }
+  .profile__players_cards {
+    gap: 20px;
+    flex-direction: column;
   }
 }

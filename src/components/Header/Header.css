@@ -82,10 +82,16 @@
   .header__title {
     font-size: 35px;
   }
+  .header__elements {
+    height: 61px;
+  }
   .header__nav {
     gap: 5px;
   }
   .header__button {
     scale: 0.85;
+    width: 80px;
+    font-size: 20px;
+    padding: 0;
   }
 }

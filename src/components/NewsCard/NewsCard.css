@@ -39,7 +39,7 @@
 .newscard__title {
   height: 175px;
   font-size: 18px;
-  line-height: 18px;
+  line-height: 19px;
   text-align: left;
   margin: 5px 0 10px;
   font-family: Georgia, "Times New Roman", Times, serif;
@@ -52,4 +52,26 @@
   margin: 0;
   text-align: left;
   font-family: 'Cambria, Cochin, Georgia, Times, "Times New Roman", serif';
+}
+
+@media screen and (max-width: 1030px) and (min-width: 581px) {
+  .newscard {
+    width: 200px;
+    height: 300px;
+  }
+  .newscard__info {
+    padding: 8px;
+  }
+  .newscard__image {
+    width: 190px;
+    margin: 5px 0 0;
+  }
+  .newscard__date {
+    font-size: 16px;
+  }
+  .newscard__title {
+    font-size: 14px;
+    line-height: 16px;
+    margin: 0;
+  }
 }

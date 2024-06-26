@@ -8,6 +8,7 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
 import TeamSelectModal from "../TeamSelectModal/TeamSelectModal";
+import Preloader from "../Preloader/Preloader";
 import { getNewsStories } from "../../Utils/api";
 
 import "./App.css";

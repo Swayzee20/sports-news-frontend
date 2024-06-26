@@ -9,8 +9,8 @@ function NewsCard({ story }) {
       <img src={story.image} className="newscard__image" />
 
       <div className="newscard__info">
-        <div className="newscard__date">June 1, 2024</div>
-        <h2 className="newscard__title">{story.title}</h2>
+        <div className="newscard__date">Link: {story.link}</div>
+        <div className="newscard__title">{story.title}</div>
         <p className="newscard__body"></p>
       </div>
     </div>

@@ -1,6 +1,13 @@
 import React from "react";
-import { getTeamSchedule, getTeams, getPlayerData } from "../../Utils/api";
+import {
+  getTeamSchedule,
+  getTeams,
+  getPlayerData,
+  getNewsStories,
+} from "../../Utils/api";
+import NewsCard from "../NewsCard/NewsCard";
 import PlayerCard from "../PlayerCard/PlayerCard";
+import Preloader from "../Preloader/Preloader";
 import { teams } from "../../Utils/Constants";
 import "./Profile.css";
 
@@ -57,13 +64,31 @@ function Profile({ abv }) {
   const [rusher, setRusher] = React.useState({});
   const [receiver, setReceiver] = React.useState({});
   const [topPlayer, setTopPlayer] = React.useState([]);
+  const [isLoading, setIsLoading] = React.useState(false);
+  const [newsStories, setNewsStories] = React.useState([]);
 
   const teamName = teams.filter((item) => item.value === abv);
+
+  function handlePreloader(status) {
+    setIsLoading(status);
+  }
+
+  React.useEffect(() => {
+    getNewsStories()
+      .then((data) => {
+        console.log(data);
+        setNewsStories(data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
 
   React.useEffect(() => {
     if (abv === "") {
       return;
     } else {
+      setIsLoading(true);
       getTeamSchedule(abv)
         .then((data) => {
           setSchedule(data.body.schedule);
@@ -118,6 +143,7 @@ function Profile({ abv }) {
             });
           })
           .catch((err) => console.error(err));
+        setIsLoading(false);
       })
       .catch((err) => {
         console.error(err);
@@ -143,7 +169,9 @@ function Profile({ abv }) {
     return teams;
   }
 
-  return (
+  return isLoading ? (
+    <Preloader />
+  ) : (
     <main className="profile">
       <div className="profile__content">
         <h2 className="profile__title">My Team</h2>
@@ -195,6 +223,20 @@ function Profile({ abv }) {
               })}
             </div>
           )}
+        </div>
+        <div className="profile__newssection">
+          <h2 className="profile__newssection_title">Recent News</h2>
+          <div className="profile__newscards">
+            {newsStories.map((story) => {
+              return (
+                <NewsCard
+                  key={newsStories.indexOf(story)}
+                  story={story}
+                  alt="news story photo"
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
     </main>

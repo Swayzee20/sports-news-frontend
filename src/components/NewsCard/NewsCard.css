@@ -1,6 +1,6 @@
 .newscard {
-  width: 300px;
-  height: 400px;
+  width: 250px;
+  height: 350px;
   border: 1px solid rgb(84, 84, 84);
   background-color: rgb(233, 233, 233);
   border-radius: 10px;
@@ -19,8 +19,8 @@
 }
 
 .newscard__image {
-  width: 280px;
-  height: 200px;
+  width: 230px;
+  height: 180px;
   margin-top: 10px;
   background-color: rgb(255, 255, 255);
   align-self: center;
@@ -29,7 +29,9 @@
 }
 
 .newscard__date {
-  font-size: 20px;
+  font-size: 12px;
+  font-weight: normal;
+  text-align: left;
   left: 5px;
   display: flex;
   color: rgb(155, 155, 155);
@@ -38,8 +40,9 @@
 
 .newscard__title {
   height: 175px;
-  font-size: 18px;
-  line-height: 19px;
+  font-size: 15px;
+  line-height: 16px;
+  font-weight: normal;
   text-align: left;
   margin: 5px 0 10px;
   font-family: Georgia, "Times New Roman", Times, serif;
@@ -54,7 +57,7 @@
   font-family: 'Cambria, Cochin, Georgia, Times, "Times New Roman", serif';
 }
 
-@media screen and (max-width: 1030px) and (min-width: 581px) {
+@media screen and (max-width: 989px) and (min-width: 581px) {
   .newscard {
     width: 200px;
     height: 300px;

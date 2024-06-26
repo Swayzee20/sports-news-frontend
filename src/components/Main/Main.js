@@ -52,16 +52,16 @@ function Main({ loggedIn, onClick }) {
           </button>
         )}
       </div>
-      <div className="about">
-        <div className="about__content">
-          <h2 className="about__title">About the Author</h2>
-          <div className="about__info">
+      <div className="main__about">
+        <div className="main__about_content">
+          <h2 className="main__about_title">About the Author</h2>
+          <div className="main__about_info">
             <img
-              className="about__info_image"
+              className="main__about_info-image"
               src={aboutPhoto}
               alt="author photo"
             ></img>
-            <p className="about__info_text">
+            <p className="main__about_info-text">
               Hi, my name is Josue Flores and I'm a full stack developer. Some
               of the technologies I know, and have implemented into this Web
               App, include HTML, CSS, Javascript, and React. I built the backend

@@ -61,7 +61,7 @@
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-.about {
+.main__about {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,39 +70,30 @@
   background-color: rgb(19, 19, 19);
 }
 
-.about__content {
+.main__about_content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.about__info {
+.main__about_info {
   display: flex;
   gap: 50px;
   max-width: 1030px;
 }
 
-.about__info_image {
-  width: 225px;
+.main__about_info-image {
+  width: 250px;
   border-radius: 15px;
 }
 
-.about__info_text {
+.main__about_info-text {
   text-align: left;
   margin: 0;
 }
 
-.about__title {
+.main__about_title {
   font-size: 45px;
-}
-
-.main__newscards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px 40px;
-  grid-auto-rows: minmax(100px, auto);
-  justify-items: center;
-  /* max-width: 1200px; */
 }
 
 @media screen and (max-width: 1030px) and (min-width: 581px) {
@@ -119,15 +110,14 @@
   .main__subtitle {
     font-size: 30px;
   }
-  .main__searchbar {
-    height: 35px;
-    width: 550px;
+  .main__about_content {
+    max-width: 580px;
   }
-  .main__searchbar::placeholder {
-    font-size: 16px;
+  .main__about_info-image {
+    width: 200px;
   }
-  .main__newscards {
-    gap: 10px 20px;
+  .main__about_info-text {
+    font-size: 14px;
   }
 }
 
@@ -141,20 +131,23 @@
   .main__search_title {
     font-size: 25px;
   }
-  .main__searchbar {
-    height: 35px;
-    width: 450px;
+  .main__about_title {
+    font-size: 35px;
   }
-  .main__searchbar::placeholder {
-    font-size: 16px;
+  .main__about_content {
+    max-width: 270px;
+    align-items: center;
   }
-  .main__newscards {
-    display: flex;
+  .main__about_info {
     flex-direction: column;
-    /* grid-template-rows: repeat(3, 1fr); */
-    gap: 10px 40px;
-    /* grid-auto-rows: minmax(100px, auto); */
-    justify-items: center;
-    margin: 0 0 40px;
+    align-items: center;
+  }
+  .main__about_info-image {
+    width: 250px;
+  }
+  .main__about_info-text {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 40px;
   }
 }

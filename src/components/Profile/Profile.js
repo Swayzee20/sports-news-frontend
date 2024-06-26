@@ -37,7 +37,9 @@ function playersReducer(state, action) {
       return {
         ...state,
         players: [
-          ...state.players.filter((player) => player.pos !== "WR"),
+          ...state.players.filter(
+            (player) => player.espnID !== state.players[0].espnID
+          ),
           action.payload,
         ],
       };
@@ -76,7 +78,6 @@ function Profile({ abv }) {
   React.useEffect(() => {
     getNewsStories()
       .then((data) => {
-        console.log(data);
         setNewsStories(data);
       })
       .catch((err) => {
@@ -103,52 +104,55 @@ function Profile({ abv }) {
   //so that you can use the data in the other API calls.
 
   React.useEffect(() => {
-    getTeams()
-      .then((data) => {
-        return data.body.filter((item) => item.teamAbv === abv);
-      })
-      .then((data) => {
-        console.log(data);
-        setTopPlayer([
-          data[0].topPerformers.Passing.passYds,
-          data[0].topPerformers.Rushing.rushYds,
-          data[0].topPerformers.Receiving.recYds,
-        ]);
-        getPlayerData(data[0].topPerformers.Passing.passYds.playerID)
-          .then((playerData) => {
-            setPasser(playerData.body);
-            dispatch({
-              type: "update passer",
-              payload: playerData.body,
-            });
-          })
-          .catch((err) => console.error(err));
-        getPlayerData(data[0].topPerformers.Rushing.rushYds.playerID)
-          .then((playerData) => {
-            console.log("ranRB");
-            setRusher(playerData.body);
-            dispatch({
-              type: "update rusher",
-              payload: playerData.body,
-            });
-          })
-          .catch((err) => console.error(err));
-        getPlayerData(data[0].topPerformers.Receiving.recYds.playerID)
-          .then((playerData) => {
-            console.log(playerData);
-            setReceiver(playerData.body);
-            dispatch({
-              type: "update receiver",
-              payload: playerData.body,
-            });
-          })
-          .catch((err) => console.error(err));
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
+    if (abv === "") {
+      return;
+    } else {
+      getTeams()
+        .then((data) => {
+          return data.body.filter((item) => item.teamAbv === abv);
+        })
+        .then((data) => {
+          setTopPlayer([
+            data[0].topPerformers.Passing.passYds,
+            data[0].topPerformers.Rushing.rushYds,
+            data[0].topPerformers.Receiving.recYds,
+          ]);
+          getPlayerData(data[0].topPerformers.Passing.passYds.playerID)
+            .then((playerData) => {
+              setPasser(playerData.body);
+              dispatch({
+                type: "update passer",
+                payload: playerData.body,
+              });
+            })
+            .catch((err) => console.error(err));
+          getPlayerData(data[0].topPerformers.Rushing.rushYds.playerID)
+            .then((playerData) => {
+              setRusher(playerData.body);
+              dispatch({
+                type: "update rusher",
+                payload: playerData.body,
+              });
+            })
+            .catch((err) => console.error(err));
+          getPlayerData(data[0].topPerformers.Receiving.recYds.playerID)
+            .then((playerData) => {
+              setReceiver(playerData.body);
+              dispatch({
+                type: "update receiver",
+                payload: playerData.body,
+              });
+            })
+            .catch((err) => console.error(err));
+          setIsLoading(false);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
   }, []);
+
+  console.log(topPlayers.players);
 
   // Variables and Functions for extracting game info from api data
   let gameDate = [];
@@ -225,7 +229,7 @@ function Profile({ abv }) {
           )}
         </div>
         <div className="profile__newssection">
-          <h2 className="profile__newssection_title">Recent News</h2>
+          <h2 className="profile__newssection_title">Recent NFL News</h2>
           <div className="profile__newscards">
             {newsStories.map((story) => {
               return (

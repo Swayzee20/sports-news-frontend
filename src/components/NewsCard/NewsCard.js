@@ -9,7 +9,10 @@ function NewsCard({ story }) {
       <img src={story.image} className="newscard__image" />
 
       <div className="newscard__info">
-        <div className="newscard__date">Link: {story.link}</div>
+        <div className="newscard__date">
+          <span className="newscard__date_span">Link to Full Story: </span>
+          {story.link}
+        </div>
         <div className="newscard__title">{story.title}</div>
         <p className="newscard__body"></p>
       </div>

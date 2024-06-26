@@ -3,7 +3,7 @@
   height: 70px;
   justify-content: space-between; */
   /* align-items: center; */
-  padding: 12px 35px;
+  padding: 12px 35px 0;
 }
 
 .header__elements {

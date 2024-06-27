@@ -1,8 +1,6 @@
 import React from "react";
 import "./NewsCard.css";
 
-import cardImagePath from "../../Images/soccerField.png";
-
 function NewsCard({ story }) {
   return (
     <div className="newscard">

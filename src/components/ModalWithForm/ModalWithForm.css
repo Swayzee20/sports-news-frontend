@@ -73,7 +73,7 @@
 
 @media screen and (max-width: 580px) {
   .modal__content {
-    max-width: 350px;
+    max-width: 250px;
     gap: 20px;
   }
   .modal__form {
@@ -89,5 +89,13 @@
   .modal__submit_auth {
     align-self: center;
     margin-bottom: 25px;
+  }
+  .modal__close {
+    right: 4px;
+    top: -25px;
+  }
+  .modal__submit {
+    width: 110px;
+    height: 30px;
   }
 }

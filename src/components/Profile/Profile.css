@@ -128,8 +128,11 @@
 }
 
 @media screen and (max-width: 684px) {
+  .profile {
+    padding: 10px 10px 30px;
+  }
   .profile__teamschedule {
-    grid-template-columns: 300px;
+    grid-template-columns: 250px;
     grid-template-rows: repeat(17, 50px);
   }
   .profile__players_title {

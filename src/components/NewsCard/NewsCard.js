@@ -10,8 +10,7 @@ function NewsCard({ story }) {
         <a className="newscard__link" href={story.link}>
           Link to Full Story:{" "}
         </a>
-        <div className="newscard__title">{story.title}</div>
-        <p className="newscard__body"></p>
+        <p className="newscard__title">{story.title}</p>
       </div>
     </div>
   );

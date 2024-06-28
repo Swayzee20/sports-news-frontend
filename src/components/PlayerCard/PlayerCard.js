@@ -13,8 +13,8 @@ function PlayerCard({ topPlayer, player, yards }) {
       <div className="playercard__info">
         <h3 className="playercard__title">{player.espnName}</h3>
         <div className="playercard__stat">
-          <div className="playercard__position">{player.pos}</div>
-          <div className="playercard__jersey">#{player.jerseyNum}</div>
+          <h4 className="playercard__position">{player.pos}</h4>
+          <h4 className="playercard__jersey">#{player.jerseyNum}</h4>
         </div>
       </div>
     </div>

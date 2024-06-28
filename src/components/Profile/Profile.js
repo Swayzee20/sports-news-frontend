@@ -173,8 +173,6 @@ function Profile({ abv }) {
     return teams;
   }
 
-  return <Preloader />;
-
   return isLoading ? (
     <Preloader />
   ) : (

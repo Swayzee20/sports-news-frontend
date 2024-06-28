@@ -23,9 +23,9 @@ function Main({ loggedIn, onClick }) {
 
   return (
     <main className="main">
-      <div className="main__title">
+      <h2 className="main__title">
         See what's going on in the world of Football
-      </div>
+      </h2>
       <div className="main__search">
         {loggedIn ? (
           <h3 className="main__search_title">Choose your team to follow</h3>

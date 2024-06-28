@@ -65,14 +65,15 @@
 
 @media screen and (max-width: 989px) and (min-width: 685px) {
   .newscard {
-    width: 200px;
-    height: 300px;
+    width: 180px;
+    height: 250px;
   }
   .newscard__info {
     padding: 8px;
   }
   .newscard__image {
-    width: 190px;
+    width: 170px;
+    height: 100px;
     margin: 5px 0 0;
   }
   .newscard__date {

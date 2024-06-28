@@ -173,6 +173,8 @@ function Profile({ abv }) {
     return teams;
   }
 
+  return <Preloader />;
+
   return isLoading ? (
     <Preloader />
   ) : (
@@ -184,7 +186,7 @@ function Profile({ abv }) {
           <div className="profile__subtitle">Select A Team to Follow</div>
         ) : (
           <div className="profile__schedule_info">
-            <div className="profile__teamname">{teamName[0].label}</div>
+            <h3 className="profile__teamname">{teamName[0].label}</h3>
             <div className="profile__teamschedule">
               {schedule.map((game) => {
                 return game.seasonType === "Regular Season" ? (

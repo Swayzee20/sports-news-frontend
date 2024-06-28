@@ -7,7 +7,7 @@ function Header({ loggedIn, onClick }) {
     <div className="header">
       <div className="header__elements">
         <h1 className="header__title"> Sports News</h1>
-        <div className="header__nav">
+        <nav className="header__nav">
           <NavLink
             exact
             to="/"
@@ -33,7 +33,7 @@ function Header({ loggedIn, onClick }) {
               Sign up
             </button>
           )}
-        </div>
+        </nav>
       </div>
     </div>
   );

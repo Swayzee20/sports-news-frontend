@@ -20,6 +20,7 @@ function App() {
   const [activeModal, setActiveModal] = React.useState("");
   const [teamAbv, setTeamAbv] = React.useState("");
   const [myTeam, setMyTeam] = React.useState("");
+  const [isLoading, setIsLoading] = React.useState(false);
 
   function handleCloseModal() {
     setActiveModal("");
@@ -64,7 +65,7 @@ function App() {
   // }, []);
 
   return (
-    <div className="App">
+    <div className="app">
       <Header loggedIn={isLoggedIn} onClick={handleSignUpModal} />
       <Switch>
         <Route exact path="/">

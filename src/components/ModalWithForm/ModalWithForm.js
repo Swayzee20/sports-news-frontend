@@ -23,7 +23,7 @@ function ModalWithForm({
           <h3 className="modal__title">{title}</h3>
         </div>
         <form
-          className={isLoggedIn ? "modal__form_team" : "modal__form_auth"}
+          className={isLoggedIn ? "modal__form" : "modal__form_auth"}
           onSubmit={onSubmit}
         >
           {children}

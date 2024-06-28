@@ -28,11 +28,9 @@ function Main({ loggedIn, onClick }) {
       </h2>
       <div className="main__search">
         {loggedIn ? (
-          <h3 className="main__search_title">Choose your team to follow</h3>
+          <h3 className="main__subtitle">Choose your team to follow</h3>
         ) : (
-          <h3 className="main__search_title">
-            Keep up with your favorite team
-          </h3>
+          <h3 className="main__subtitle">Keep up with your favorite team</h3>
         )}
         {loggedIn ? (
           <button
@@ -53,15 +51,15 @@ function Main({ loggedIn, onClick }) {
         )}
       </div>
       <div className="main__about">
-        <div className="main__about_content">
-          <h2 className="main__about_title">About the Author</h2>
-          <div className="main__about_info">
+        <div className="main__content">
+          <h2 className="main__author">About the Author</h2>
+          <div className="main__info">
             <img
-              className="main__about_info-image"
+              className="main__image"
               src={aboutPhoto}
               alt="author photo"
             ></img>
-            <p className="main__about_info-text">
+            <p className="main__summary">
               Hi, my name is Josue Flores and I'm a full stack developer. Some
               of the technologies I know, and have implemented into this Web
               App, include HTML, CSS, Javascript, and React. I built the backend

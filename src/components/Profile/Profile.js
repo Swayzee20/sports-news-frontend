@@ -183,15 +183,12 @@ function Profile({ abv }) {
         {abv === "" ? (
           <div className="profile__subtitle">Select A Team to Follow</div>
         ) : (
-          <div className="profile__schedule_info">
+          <div className="profile__schedule">
             <h3 className="profile__teamname">{teamName[0].label}</h3>
             <div className="profile__teamschedule">
               {schedule.map((game) => {
                 return game.seasonType === "Regular Season" ? (
-                  <div
-                    key={schedule.indexOf(game)}
-                    className="profile__teamschedule_game"
-                  >
+                  <div key={schedule.indexOf(game)} className="profile__game">
                     <p>Wk: {schedule.indexOf(game) - 2}</p>
                     <div>
                       {handleGameDate(game.gameID)}{" "}
@@ -210,8 +207,8 @@ function Profile({ abv }) {
           {abv === "" ? (
             <div />
           ) : (
-            <div className="profile__players_cards">
-              <h2 className="profile__players_title">Top Performers</h2>
+            <div className="profile__playercard">
+              <h2 className="profile__performers">Top Performers</h2>
               {topPlayers.players.map((player) => {
                 return (
                   <PlayerCard

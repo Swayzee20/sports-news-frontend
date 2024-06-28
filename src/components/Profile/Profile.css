@@ -21,7 +21,7 @@
   margin: 41px 0 60px;
 }
 
-.profile__schedule_info {
+.profile__schedule {
   display: flex;
   flex-direction: column;
   min-height: 350px;
@@ -48,7 +48,7 @@
   grid-auto-flow: column;
 }
 
-.profile__teamschedule_game {
+.profile__game {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -80,13 +80,13 @@
   box-sizing: border-box;
 }
 
-.profile__players_title {
+.profile__performers {
   position: absolute;
   top: 20px;
   margin: 0;
 }
 
-.profile__players_cards {
+.profile__playercard {
   position: relative;
   display: flex;
   justify-content: center;
@@ -122,7 +122,7 @@
   .profile__newscards {
     gap: 10px 20px;
   }
-  .profile__players_cards {
+  .profile__playercard {
     gap: 20px;
   }
 }
@@ -135,10 +135,10 @@
     grid-template-columns: 250px;
     grid-template-rows: repeat(17, 50px);
   }
-  .profile__players_title {
+  .profile__performers {
     position: static;
   }
-  .profile__players_cards {
+  .profile__playercard {
     gap: 20px;
     flex-direction: column;
   }

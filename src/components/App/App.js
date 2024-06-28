@@ -16,11 +16,10 @@ import "./App.css";
 
 function App() {
   const history = useHistory();
-  const [isLoggedIn, setLoggedIn] = React.useState(true);
+  const [isLoggedIn, setLoggedIn] = React.useState(false);
   const [activeModal, setActiveModal] = React.useState("");
   const [teamAbv, setTeamAbv] = React.useState("");
   const [myTeam, setMyTeam] = React.useState("");
-  const [isLoading, setIsLoading] = React.useState(false);
 
   function handleCloseModal() {
     setActiveModal("");

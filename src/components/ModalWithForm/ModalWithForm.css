@@ -10,7 +10,7 @@
   background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(3px);
 }
-.modal__form_team {
+.modal__form {
   display: flex;
   flex-direction: column;
   gap: 40px;

@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import FormInput from "../FormInput/FormInput";
 import "./LoginModal.css";
-import { loginInputs } from "../../Utils/Constants";
+import { LOGIN_INPUTS } from "../../Utils/Constants";
 
 function LoginModal({
   handleCloseModal,
@@ -47,7 +47,7 @@ function LoginModal({
     >
       <div className="login__modal">
         <div className="login__modal-inputs">
-          {loginInputs.map((input) => (
+          {LOGIN_INPUTS.map((input) => (
             <FormInput
               key={input.id}
               {...input}

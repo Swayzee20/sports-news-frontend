@@ -1,6 +1,4 @@
 import React from "react";
-import NewsCard from "../NewsCard/NewsCard";
-import Dropdown from "../Dropdown/Dropdown";
 import aboutPhoto from "../../Images/dsc04111.JPG";
 import "./Main.css";
 import { getNewsStories } from "../../Utils/api";
@@ -54,11 +52,7 @@ function Main({ loggedIn, onClick }) {
         <div className="main__content">
           <h2 className="main__author">About the Author</h2>
           <div className="main__info">
-            <img
-              className="main__image"
-              src={aboutPhoto}
-              alt="author photo"
-            ></img>
+            <img className="main__image" src={aboutPhoto} alt="author"></img>
             <p className="main__summary">
               Hi, my name is Josue Flores and I'm a full stack developer. Some
               of the technologies I know, and have implemented into this Web

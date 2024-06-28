@@ -8,7 +8,7 @@ import {
 import NewsCard from "../NewsCard/NewsCard";
 import PlayerCard from "../PlayerCard/PlayerCard";
 import Preloader from "../Preloader/Preloader";
-import { teams } from "../../Utils/Constants";
+import { TEAMS } from "../../Utils/Constants";
 import "./Profile.css";
 
 const initialState = {
@@ -69,7 +69,7 @@ function Profile({ abv }) {
   const [isLoading, setIsLoading] = React.useState(false);
   const [newsStories, setNewsStories] = React.useState([]);
 
-  const teamName = teams.filter((item) => item.value === abv);
+  const teamName = TEAMS.filter((item) => item.value === abv);
 
   function handlePreloader(status) {
     setIsLoading(status);

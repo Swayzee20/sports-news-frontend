@@ -1,7 +1,7 @@
-const baseUrl =
+const BASE_URL =
   "https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com";
 
-const registerInputs = [
+const REGISTER_INPUTS = [
   {
     id: 1,
     name: "username",
@@ -35,7 +35,7 @@ const registerInputs = [
   },
 ];
 
-const loginInputs = [
+const LOGIN_INPUTS = [
   {
     id: 1,
     name: "email",
@@ -58,7 +58,7 @@ const loginInputs = [
   },
 ];
 
-const teams = [
+const TEAMS = [
   { value: "ARI", label: "Arizona Cardinals" },
   { value: "ATL", label: "Atlanta Falcons" },
   { value: "BAL", label: "Baltimore Ravens" },
@@ -93,4 +93,4 @@ const teams = [
   { value: "WSH", label: "Washington Commanders" },
 ];
 
-export { baseUrl, registerInputs, loginInputs, teams };
+export { BASE_URL, REGISTER_INPUTS, LOGIN_INPUTS, TEAMS };

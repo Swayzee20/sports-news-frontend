@@ -3,7 +3,7 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import FormInput from "../FormInput/FormInput";
 import { useState } from "react";
 import "./RegisterModal.css";
-import { registerInputs } from "../../Utils/Constants";
+import { REGISTER_INPUTS } from "../../Utils/Constants";
 
 function RegisterModal({
   handleCloseModal,
@@ -53,7 +53,7 @@ function RegisterModal({
     >
       <div className="register__modal">
         <div className="register__modal-inputs">
-          {registerInputs.map((input) => (
+          {REGISTER_INPUTS.map((input) => (
             <FormInput
               key={input.id}
               {...input}

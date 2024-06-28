@@ -1,11 +1,11 @@
-import { baseUrl } from "./Constants";
+import { BASE_URL } from "./Constants";
 
 function handleServerResponse(res) {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 }
 
 function getNewsStories() {
-  return fetch(`${baseUrl}/getNFLNews?recentNews=true&maxItems=3`, {
+  return fetch(`${BASE_URL}/getNFLNews?recentNews=true&maxItems=3`, {
     method: "GET",
     headers: {
       // "Content-Type": "application/json",
@@ -21,7 +21,7 @@ function getNewsStories() {
 }
 
 function getTeamSchedule(team) {
-  return fetch(`${baseUrl}/getNFLTeamSchedule?teamAbv=${team}&season=2023`, {
+  return fetch(`${BASE_URL}/getNFLTeamSchedule?teamAbv=${team}&season=2023`, {
     method: "GET",
     headers: {
       "x-rapidapi-key": "e4cb791f0dmsh8985bf89d71f877p15bfa2jsnb63f735d68e6",
@@ -33,7 +33,7 @@ function getTeamSchedule(team) {
 
 function getTeams() {
   return fetch(
-    `${baseUrl}/getNFLTeams?rosters=false&schedules=false&topPerformers=true&teamStats=false&teamStatsSeason=2023`,
+    `${BASE_URL}/getNFLTeams?rosters=false&schedules=false&topPerformers=true&teamStats=false&teamStatsSeason=2023`,
     {
       method: "GET",
       headers: {
@@ -47,7 +47,7 @@ function getTeams() {
 
 function getPlayerData(playerID) {
   return fetch(
-    `${baseUrl}/getNFLPlayerInfo?playerID=${playerID}&getStats=true'`,
+    `${BASE_URL}/getNFLPlayerInfo?playerID=${playerID}&getStats=true'`,
     {
       method: "GET",
       headers: {

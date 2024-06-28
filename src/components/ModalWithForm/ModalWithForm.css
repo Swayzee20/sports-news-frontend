@@ -44,7 +44,7 @@
 }
 .modal__close {
   background-color: transparent;
-  background-image: url("../../Images/Close2.png");
+  background-image: url("../../Images/Close2.svg");
   background-repeat: no-repeat;
   width: 20px;
   height: 20px;

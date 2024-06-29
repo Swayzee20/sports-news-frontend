@@ -17,8 +17,6 @@ function Main({ loggedIn, onClick }) {
       });
   }, []);
 
-  console.log(newsStories);
-
   return (
     <main className="main">
       <h2 className="main__title">

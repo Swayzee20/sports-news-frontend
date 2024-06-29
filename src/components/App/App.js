@@ -109,6 +109,8 @@ function App() {
         setNewsStories(data);
       })
       .catch((err) => {
+        setError(err.toString());
+        handleErrorModal();
         console.error(err);
       });
   }, []);
@@ -171,7 +173,11 @@ function App() {
                 payload: playerData.body,
               });
             })
-            .catch((err) => console.error(err));
+            .catch((err) => {
+              setError(err.toString());
+              handleErrorModal();
+              console.error(err);
+            });
           getPlayerData(data[0].topPerformers.Receiving.recYds.playerID)
             .then((playerData) => {
               setReceiver(playerData.body);
@@ -180,14 +186,16 @@ function App() {
                 payload: playerData.body,
               });
             })
-            .catch((err) => console.error(err));
+            .catch((err) => {
+              setError(err.toString());
+              handleErrorModal();
+              console.error(err);
+            });
           setIsLoading(false);
         })
         .catch((err) => {
           setError(err.toString());
           handleErrorModal();
-          console.log(err);
-          console.error(err);
         });
     }
   }, [myTeam]);
@@ -203,7 +211,6 @@ function App() {
     document.addEventListener("keydown", handleEscClose);
     document.addEventListener("click", (evt) => {
       if (evt.target === modalRef.current) {
-        console.log("ran");
         handleCloseModal();
       }
     });

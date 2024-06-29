@@ -16,6 +16,7 @@ function RegisterModal({
   //   handleNameChange,
   //   handleUrlChange,
   handleLoginModal,
+  modalRef,
 }) {
   //   function handleSubmit(e) {
   //     e.preventDefault();
@@ -23,12 +24,6 @@ function RegisterModal({
   //     console.log(password);
   //     register(data);
   //   }
-
-  function hasInvalInput() {
-    return this._inputElements.some((inputElement) => {
-      return !inputElement.validity.valid;
-    });
-  }
 
   const [inputValues, setInputValues] = useState({
     username: "",
@@ -50,6 +45,7 @@ function RegisterModal({
       title="Sign Up"
       name="register-form"
       buttonText="Sign Up"
+      modalRef={modalRef}
     >
       <div className="register__modal">
         <div className="register__modal-inputs">

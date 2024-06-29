@@ -1,7 +1,7 @@
 import React from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import Dropdown from "../Dropdown/Dropdown";
-import { teams } from "../../Utils/Constants";
+import { TEAMS } from "../../Utils/Constants";
 import "./TeamSelectModal.css";
 
 function TeamSelectModal({
@@ -11,6 +11,7 @@ function TeamSelectModal({
   data,
   handleTeamSubmit,
   isLoggedIn,
+  modalRef,
 }) {
   function handleSubmit(e) {
     e.preventDefault();
@@ -29,8 +30,9 @@ function TeamSelectModal({
       buttonText="Select Team"
       onChange={handleSetTeam}
       isLoggedIn={isLoggedIn}
+      modalRef={modalRef}
     >
-      <Dropdown props={teams} onChange={handleSetTeam} data={data}></Dropdown>
+      <Dropdown props={TEAMS} onChange={handleSetTeam} data={data}></Dropdown>
     </ModalWithForm>
   );
 }

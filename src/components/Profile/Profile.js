@@ -1,158 +1,20 @@
 import React from "react";
-import {
-  getTeamSchedule,
-  getTeams,
-  getPlayerData,
-  getNewsStories,
-} from "../../Utils/api";
 import NewsCard from "../NewsCard/NewsCard";
 import PlayerCard from "../PlayerCard/PlayerCard";
+
 import Preloader from "../Preloader/Preloader";
 import { TEAMS } from "../../Utils/Constants";
 import "./Profile.css";
 
-const initialState = {
-  players: [{ pos: "QB" }, { pos: "RB" }, { pos: "WR" }],
-};
-
-function playersReducer(state, action) {
-  switch (action.type) {
-    case "update passer":
-      return {
-        ...state,
-        players: [
-          ...state.players.filter((player) => player.pos !== "QB"),
-          action.payload,
-        ],
-      };
-    case "update rusher":
-      return {
-        ...state,
-        players: [
-          ...state.players.filter((player) => player.pos !== "RB"),
-          action.payload,
-        ],
-      };
-    case "update receiver":
-      return {
-        ...state,
-        players: [
-          ...state.players.filter(
-            (player) => player.espnID !== state.players[0].espnID
-          ),
-          action.payload,
-        ],
-      };
-    default:
-      return state;
-  }
-}
-
-// function playersReducer(state, action) {
-//   if (action.type === "update passer" && state[0] !== action.payload) {
-//     return [...state, state[0].action.payload];
-//   } else if (action.type === "update rusher" && state[1] !== action.payload) {
-//     return [...state, state[1].action.payload];
-//   } else if (action.type === "update receiver" && state[2] !== action.payload) {
-//     return [...state, state[2].action.payload];
-//   }
-// }
-
-function Profile({ abv }) {
-  const [schedule, setSchedule] = React.useState([]);
-  const [date, setDate] = React.useState([]);
-  const [topPlayers, dispatch] = React.useReducer(playersReducer, initialState);
-  const [passer, setPasser] = React.useState({});
-  const [rusher, setRusher] = React.useState({});
-  const [receiver, setReceiver] = React.useState({});
-  const [topPlayer, setTopPlayer] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(false);
-  const [newsStories, setNewsStories] = React.useState([]);
-
-  const teamName = TEAMS.filter((item) => item.value === abv);
-
-  function handlePreloader(status) {
-    setIsLoading(status);
-  }
-
-  React.useEffect(() => {
-    getNewsStories()
-      .then((data) => {
-        setNewsStories(data);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }, []);
-
-  React.useEffect(() => {
-    if (abv === "") {
-      return;
-    } else {
-      setIsLoading(true);
-      getTeamSchedule(abv)
-        .then((data) => {
-          setSchedule(data.body.schedule);
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-    }
-  }, []);
-
-  //take the other api calls out of this use effect, maybe assign the variables that you need, to another variable outside of the useeffect,
-  //so that you can use the data in the other API calls.
-
-  React.useEffect(() => {
-    if (abv === "") {
-      return;
-    } else {
-      getTeams()
-        .then((data) => {
-          return data.body.filter((item) => item.teamAbv === abv);
-        })
-        .then((data) => {
-          setTopPlayer([
-            data[0].topPerformers.Passing.passYds,
-            data[0].topPerformers.Rushing.rushYds,
-            data[0].topPerformers.Receiving.recYds,
-          ]);
-          getPlayerData(data[0].topPerformers.Passing.passYds.playerID)
-            .then((playerData) => {
-              setPasser(playerData.body);
-              dispatch({
-                type: "update passer",
-                payload: playerData.body,
-              });
-            })
-            .catch((err) => console.error(err));
-          getPlayerData(data[0].topPerformers.Rushing.rushYds.playerID)
-            .then((playerData) => {
-              setRusher(playerData.body);
-              dispatch({
-                type: "update rusher",
-                payload: playerData.body,
-              });
-            })
-            .catch((err) => console.error(err));
-          getPlayerData(data[0].topPerformers.Receiving.recYds.playerID)
-            .then((playerData) => {
-              setReceiver(playerData.body);
-              dispatch({
-                type: "update receiver",
-                payload: playerData.body,
-              });
-            })
-            .catch((err) => console.error(err));
-          setIsLoading(false);
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-    }
-  }, []);
-
-  console.log(topPlayers.players);
+function Profile({
+  isLoading,
+  schedule,
+  myTeam,
+  newsStories,
+  topPlayers,
+  topPlayer,
+}) {
+  const teamName = TEAMS.filter((item) => item.value === myTeam);
 
   // Variables and Functions for extracting game info from api data
   let gameDate = [];
@@ -180,7 +42,7 @@ function Profile({ abv }) {
       <div className="profile__content">
         <h2 className="profile__title">My Team</h2>
         {/* <div className="profile__teamschedule"> */}
-        {abv === "" ? (
+        {myTeam === "" ? (
           <div className="profile__subtitle">Select A Team to Follow</div>
         ) : (
           <div className="profile__schedule">
@@ -204,7 +66,7 @@ function Profile({ abv }) {
         )}
         {/* </div> */}
         <div className="profile__players">
-          {abv === "" ? (
+          {myTeam === "" ? (
             <div />
           ) : (
             <div className="profile__playercard">
@@ -230,11 +92,7 @@ function Profile({ abv }) {
           <div className="profile__newscards">
             {newsStories.map((story) => {
               return (
-                <NewsCard
-                  key={newsStories.indexOf(story)}
-                  story={story}
-                  alt="news story photo"
-                />
+                <NewsCard key={newsStories.indexOf(story)} story={story} />
               );
             })}
           </div>

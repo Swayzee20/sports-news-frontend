@@ -10,9 +10,10 @@ function ModalWithForm({
   isOpen,
   onSubmit,
   isLoggedIn,
+  modalRef,
 }) {
   return (
-    <div className={`modal modal_type_${name}`}>
+    <div className={`modal modal_type_${name}`} ref={modalRef}>
       <div className="modal__content">
         <div className="modal__content-header">
           <button

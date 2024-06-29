@@ -50,8 +50,8 @@ const LOGIN_INPUTS = [
     name: "password",
     type: "password",
     placeholder: "Password",
-    minlength: "2",
-    maxlength: "30",
+    minLength: "2",
+    maxLength: "30",
     required: true,
     errorMessage: "Password must be between 2 and 30 characters",
     label: "Password",
@@ -59,7 +59,7 @@ const LOGIN_INPUTS = [
 ];
 
 const TEAMS = [
-  { value: "ARI", label: "Arizona Cardinals" },
+  { value: "AR", label: "Arizona Cardinals" },
   { value: "ATL", label: "Atlanta Falcons" },
   { value: "BAL", label: "Baltimore Ravens" },
   { value: "BUF", label: "Buffalo Bills" },

@@ -12,6 +12,7 @@ function LoginModal({
   //   handlePasswordChange,
   //   signIn,
   handleSignUpModal,
+  modalRef,
 }) {
   //   const { email, password } = data;
 
@@ -44,6 +45,7 @@ function LoginModal({
       title="Log In"
       name="login-form"
       buttonText="Log In"
+      modalRef={modalRef}
     >
       <div className="login__modal">
         <div className="login__modal-inputs">

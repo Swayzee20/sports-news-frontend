@@ -1,0 +1,33 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.form__input_error {
+  font-size: 12px;
+  color: red;
+  display: none;
+}
+.form__label {
+  color: white;
+}
+
+.form__input {
+  border-radius: 10px;
+  border: 1.5px solid rgb(73, 195, 77);
+  background-color: rgb(240, 240, 240);
+  height: 22px;
+  line-height: 20px;
+  font-size: 16px;
+}
+
+.form__input:invalid[focus="true"] ~ .form__input_error {
+  display: block;
+}
+
+.form__input:invalid[focus="true"] {
+  border: 1px solid red;
+}

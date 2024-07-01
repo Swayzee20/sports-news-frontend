@@ -1,0 +1,60 @@
+.playercard {
+  width: 250px;
+  height: 100px;
+  display: flex;
+  background-color: rgb(0, 0, 0);
+  font-size: 12px;
+  border-radius: 10px;
+}
+
+.playercard__image {
+  width: 125px;
+  height: 100px;
+  background-color: white;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.playercard__title {
+  margin: 0;
+  font-size: 18px;
+}
+
+.playercard__info {
+  display: flex;
+  width: 150px;
+  flex-direction: column;
+  padding: 15px 10px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.playercard__stat {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 989px) and (min-width: 685px) {
+  .playercard {
+    width: 180px;
+    height: 80px;
+  }
+  .playercard__image {
+    width: 95px;
+    height: 80px;
+  }
+  .playercard__title {
+    font-size: 12px;
+  }
+  .playercard__info {
+    padding: 15px 10px;
+  }
+  .playercard__stat {
+    font-size: 10px;
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 684px) {
+}

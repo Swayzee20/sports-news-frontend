@@ -1,0 +1,165 @@
+@font-face {
+  font-family: "Oswald";
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-style: medium;
+  font-weight: 700;
+  src: url("../../vendor/fonts/Oswald-Medium.woff") format("woff");
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1360px;
+  min-height: 500px;
+  margin: 0px auto;
+  color: white;
+  align-items: center;
+  font-family: "Oswald", Impact, Haettenschweiler, "Arial Narrow Bold",
+    sans-serif;
+}
+
+.main__title {
+  font-size: 60px;
+  margin: 100px 0 10px;
+}
+
+.main__search {
+  max-width: 1360px;
+  margin: auto;
+  height: 500px;
+}
+
+.main__subtitle {
+  font-size: 40px;
+}
+
+.main__searchbar {
+  border-radius: 12px;
+  height: 40px;
+  width: 600px;
+  box-sizing: border-box;
+  padding: 10px 10px 8px;
+  border: 1px solid rgb(70, 70, 70);
+  outline: black;
+  transition: 0.5s ease;
+  justify-content: center;
+}
+
+.main__button {
+  font-size: 40px;
+  font-weight: 500;
+  color: white;
+  background: none;
+  border: solid 2.5px white;
+  border-radius: 4px;
+  cursor: pointer;
+  backdrop-filter: blur(40px);
+  transition: 0.2s;
+}
+
+.main__button:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.main__about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 99vw;
+  min-height: 600px;
+  background-color: rgb(19, 19, 19);
+  overflow: hidden;
+}
+
+.main__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.main__info {
+  display: flex;
+  gap: 50px;
+  max-width: 1030px;
+}
+
+.main__image {
+  width: 250px;
+  border-radius: 15px;
+}
+
+.main__summary {
+  text-align: left;
+  margin: 0;
+  max-width: 700px;
+}
+
+.main__author {
+  font-size: 45px;
+}
+
+@media screen and (max-width: 1030px) and (min-width: 581px) {
+  .main {
+    gap: 10px;
+    min-height: 400px;
+  }
+  .main__title {
+    font-size: 40px;
+  }
+  .main__subtitle {
+    font-size: 30px;
+  }
+  .main__about {
+    min-width: 97vw;
+  }
+  .main__content {
+    max-width: 580px;
+  }
+  .main__image {
+    width: 200px;
+  }
+  .main__summary {
+    font-size: 14px;
+    max-width: 275px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .main {
+    min-height: 400px;
+  }
+  .main__title {
+    font-size: 28px;
+    line-height: 32px;
+  }
+  .main__subtitle {
+    font-size: 22px;
+  }
+  .main__button {
+    font-size: 35px;
+  }
+  .main__about {
+    min-width: 95vw;
+  }
+  .main__author {
+    font-size: 35px;
+  }
+  .main__content {
+    max-width: 270px;
+    align-items: center;
+  }
+  .main__info {
+    flex-direction: column;
+    align-items: center;
+  }
+  .main__image {
+    width: 250px;
+  }
+  .main__summary {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+}

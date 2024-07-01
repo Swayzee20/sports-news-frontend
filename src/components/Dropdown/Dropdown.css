@@ -1,0 +1,31 @@
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dropdown__title {
+  font-size: 34px;
+}
+
+.dropdown__toggle {
+  font-size: 24px;
+  width: 90px;
+  color: white;
+  border: none;
+  background: black;
+  border-radius: 3px;
+  border: solid 0.5px white;
+  cursor: pointer;
+  text-align: center;
+}
+
+.dropdown__options {
+  width: 150px;
+  height: 25px;
+  border-radius: 3px;
+  text-align: center;
+  color: white;
+  border: none;
+  background-color: black;
+}

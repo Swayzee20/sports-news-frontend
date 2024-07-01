@@ -1,0 +1,97 @@
+.header {
+  /* display: flex;
+  height: 70px;
+  justify-content: space-between; */
+  /* align-items: center; */
+  padding: 12px 35px 0;
+}
+
+.header__elements {
+  display: flex;
+  height: 70px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.7);
+}
+.header__title {
+  margin: 0;
+  color: white;
+  font-size: 40px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.header__nav {
+  display: flex;
+  align-items: center;
+  color: white;
+  height: 100%;
+  transition: 0.5s ease;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0);
+}
+
+.header__button {
+  display: flex;
+  border: none;
+  font-size: 24px;
+  text-decoration: none;
+  height: 71px;
+  width: 100px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  /* border-bottom: solid 1px white; */
+  color: rgb(237, 237, 237);
+  box-sizing: border-box;
+  transition: 0.2s;
+}
+
+.header__button:hover {
+  border-bottom: solid 2px white;
+  color: white;
+}
+
+.header__button-signup {
+  background: none;
+}
+
+.header__button-home {
+  color: rgb(0, 0, 0);
+  border-color: rgb(0, 0, 0);
+}
+
+.header__button-home_active {
+  color: rgb(255, 255, 255);
+  border-bottom: solid 0.5px white;
+}
+
+.header__button-profile {
+  color: rgb(0, 0, 0);
+  border-color: rgb(0, 0, 0);
+}
+
+.header__button-profile_active {
+  color: rgb(255, 255, 255);
+  border-bottom: solid 0.5px white;
+  /* backdrop-filter: blur(20px);
+  box-shadow: 1px 4px 10px 4px rgb(60, 60, 60); */
+}
+
+@media screen and (max-width: 1023px) and (min-width: 581px) {
+}
+
+@media screen and (max-width: 580px) {
+  .header__title {
+    font-size: 22px;
+  }
+  .header__elements {
+    height: 61px;
+  }
+  .header__nav {
+    gap: 5px;
+  }
+  .header__button {
+    scale: 0.85;
+    width: 55px;
+    font-size: 16px;
+    padding: 0;
+  }
+}

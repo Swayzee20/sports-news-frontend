@@ -1,0 +1,151 @@
+@font-face {
+  font-family: "Oswald";
+  font-style: medium;
+  font-weight: 700;
+  src: url("../../vendor/fonts/Oswald-Medium.woff") format("woff");
+}
+
+.profile {
+  padding: 10px 35px 30px;
+  min-height: 100vh;
+  font-family: "Oswald";
+  display: flex;
+}
+
+.profile__content {
+  margin: 0 auto;
+}
+
+.profile__title {
+  font-size: 60px;
+  margin: 41px 0 60px;
+}
+
+.profile__schedule {
+  display: flex;
+  flex-direction: column;
+  min-height: 350px;
+  align-items: center;
+}
+
+.profile__subtitle {
+  color: white;
+  font-size: 30px;
+}
+
+.profile__teamname {
+  color: white;
+  font-size: 30px;
+  margin: 0 0 10px;
+}
+
+.profile__teamschedule {
+  position: relative;
+  display: grid;
+  color: black;
+  grid-template-columns: repeat(3, 300px);
+  grid-template-rows: repeat(6, 50px);
+  grid-auto-flow: column;
+}
+
+.profile__game {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: rgb(235, 235, 235);
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+
+/* .profile__teamschedule_game:first-child {
+  border-top-left-radius: 10px;
+}
+
+.profile__teamschedule_game:nth-child(6) {
+  border-bottom-left-radius: 10px;
+}
+
+.profile__teamschedule_game:nth-child(13) {
+  border-top-right-radius: 10px;
+} */
+
+.profile__players {
+  min-height: 300px;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.profile__performers {
+  position: absolute;
+  top: 20px;
+  margin: 0;
+}
+
+.profile__playercard {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  min-height: 300px;
+  align-items: center;
+}
+
+.profile__newssection_title {
+  font-size: 45px;
+}
+
+.profile__newscards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 40px;
+  grid-auto-rows: minmax(100px, auto);
+  justify-items: center;
+  /* max-width: 1200px; */
+}
+
+@media screen and (max-width: 1199px) and (min-width: 990px) {
+  .profile__news-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 989px) and (min-width: 685px) {
+  .profile__teamschedule {
+    grid-template-columns: repeat(2, 300px);
+    grid-template-rows: repeat(9, 50px);
+  }
+  .profile__newscards {
+    gap: 10px 20px;
+  }
+  .profile__playercard {
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 684px) {
+  .profile {
+    padding: 10px 10px 30px;
+  }
+  .profile__teamschedule {
+    grid-template-columns: 250px;
+    grid-template-rows: repeat(17, 50px);
+  }
+  .profile__performers {
+    position: static;
+  }
+  .profile__playercard {
+    gap: 20px;
+    flex-direction: column;
+  }
+  .profile__newscards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-template-columns: 220px;
+  }
+}

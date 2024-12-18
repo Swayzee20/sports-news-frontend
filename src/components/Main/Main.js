@@ -53,16 +53,16 @@ function Main({ loggedIn, onClick }) {
             <img className="main__image" src={aboutPhoto} alt="author"></img>
             <p className="main__summary">
               Hi, my name is Josue Flores and I'm a full stack developer. Some
-              of the technologies I know, and have implemented into this Web
-              App, include HTML, CSS, Javascript, and React. I built the backend
-              using Node.js, MongoDB, and Express. I've learned and implemented
-              things such as adaptive web design, and building reusable
-              components while writing scalable code. I have experience using
-              GitHub and Git version control system. I have taken courses
-              through TripleTen Coding Bootcamp. I've learned so much thorughout
-              the course, I'm sure I've missed adding some of those things here.
-              This was built from the ground up, by me, to showcase some of the
-              skills I've learned at TripleTen.
+              of the technologies I'm familiar with, and have implemented into
+              this Web App, include HTML, CSS, Javascript, and React. I built
+              the frontend with adaptive web design in mind as well as building
+              reusable components and writing scalable code. I'm currently
+              working on the backend using Node.js, MongoDB, and Express. I have
+              experience using GitHub and Git version control system. I have
+              taken courses through TripleTen Coding Bootcamp. I've learned so
+              much thorughout the course, I'm sure I've missed adding some of
+              those things here. This was built from the ground up, by me, to
+              showcase some of the skills I've learned at TripleTen.
             </p>
           </div>
         </div>
